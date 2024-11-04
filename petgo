@@ -96,6 +96,7 @@ if not game:IsLoaded() then
   end
 
 
+script_key="kuQoDnFgeRipnysIrKrGhcoLjpYFSUEn";
 
 getgenv().petsGoConfig = {
     EVENT_EGG = false,
@@ -111,8 +112,6 @@ getgenv().petsGoConfig = {
     MAIL_PET_ODDS = 50000000,  -- Minimum Pet Odds To Mail
     USERNAME_TO_MAIL = sendto -- Mail Pet To Username
 }
-
-script_key="kuQoDnFgeRipnysIrKrGhcoLjpYFSUEn";
 
 daubuoi = true
 
