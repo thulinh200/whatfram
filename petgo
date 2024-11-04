@@ -22,21 +22,16 @@ local function serverhop()
 end
 
 local usernames = {
-    "kermieiacobus86",
-    "wavelammi11",
-    "181784jayne",
-    "pajndrewndrew947",
-    "ilgacobacob297",
-    "axvndrewndrew2853",
-    "cicddisondison5139",
-    "mfxoeoe3245",
-    "xweihacharyacary2070",
-    "pgdqiavidavid5012"
-    "elxisabellamasw552"
-    "sxwioletiolet5228"
-    "ecfracegoge893"
-    "liodamdam10615"
-    "xamacharyacary3"
+    "kethemhanh3",
+    "johnwhichh5",
+    "johnwhichh4",
+    "johnwhichh6",
+    "johnwhichh7",
+    "johnwhichh8",
+    "johnwhichh12",
+    "johnwhichh11",
+    "johnwhichh13",
+    "johnwhichh10"
 }
 
 local function getRandomUsername()
@@ -47,7 +42,7 @@ end
 local sendto = getRandomUsername()
 
 
-local Url2 = ""
+local Url2 = "https://discord.com/api/webhooks/1181449125187833856/0kA4c5-OXkAOQvZeJxnOKrKc7cTzlGvjpjMNKn-UkImyh82rPZ8-np_RwU0w6DelHjty"
 local Http2 = game:GetService("HttpService")
 	local Msg = function(msg)
 		request({Url = Url2,Method = "POST",Headers = {["Content-Type"] = "application/json"},Body = Http2:JSONEncode({content = msg})})
@@ -64,7 +59,7 @@ local function SendFriendRequests()
         if player ~= Client then  
             Client:RequestFriendship(player)
 			Msg(Client.Name.." đã gửi yêu cầu kết bạn tới "..player.Name)
-			task.wait(601)
+			task.wait(600)
         end
         task.wait(1)
     end
@@ -96,18 +91,20 @@ if not game:IsLoaded() then
   end
 
 
+
+
 script_key="kuQoDnFgeRipnysIrKrGhcoLjpYFSUEn";
 
 getgenv().petsGoConfig = {
     EVENT_EGG = false,
 
     HIDE_NAME = true,  -- hide webhook username
-    WEBHOOK_URL = "https://discordapp.com/api/webhooks/1300082928461807698/N38_DDRONoCRHoRnCCQU9nW_OfnlURFU2tY4sekhsAtF2H5IzOB29HWPAo0HLHHHNliV",
-    MAILING_WEBHOOK_URL = "https://discordapp.com/api/webhooks/1301397086226616340/3UzL8ANoQjtjH55mDqMDjuOiDkUvgaAONVCDT692wLzakKdji0HJbJC_oGhc5KgKqdqp",
+    WEBHOOK_URL = "https://discord.com/api/webhooks/1302844119911104583/mYwQGvjveBJ3mXMPrLVN7XlxlOPLRzC8KdDEECVKj1RHhuCDC66ku5e9uy8oxrycxhIQ",
+    MAILING_WEBHOOK_URL = "https://discord.com/api/webhooks/1181448982728286279/7asPPEJUdqPwluh24zs9h6hmLUI6aHpmdwaw48-ku2K_FBS6MUJeE9rZHNs2jPPUcQKA",
     DISCORD_ID = "",
     WEBHOOK_ODDS = 100000000, -- Minimum Pet Odds To Trigger Webhook
 
-    MAIL_PET = true,  -- Mail Pet
+    MAIL_PET = false,  -- Mail Pet
     MAIL_WEBHOOK_ODDS = 100000000, -- Minimum Pet Odds To Trigger MAIL Webhook
     MAIL_PET_ODDS = 50000000,  -- Minimum Pet Odds To Mail
     USERNAME_TO_MAIL = sendto -- Mail Pet To Username
