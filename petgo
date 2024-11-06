@@ -1,40 +1,4 @@
-Skip to content
-Navigation Menu
-thulinh200
-/
-whatfram
-
-Type / to search
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-Breadcrumbswhatfram
-/petgo
-Go to file
-t
-Latest commit
-thulinh200
-thulinh200
-Update petgo
-52b04ce
- · 
-17 hours ago
-History
-Breadcrumbswhatfram
-/petgo
-File metadata and controls
-
-Code
-
-Blame
-122 lines (89 loc) · 3.3 KB
- local plrs = game:GetService("Players") 
+local plrs = game:GetService("Players") 
   local plr = plrs.LocalPlayer
   local tpService = game:GetService("TeleportService")
 
