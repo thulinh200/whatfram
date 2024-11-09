@@ -100,7 +100,7 @@ if not game:IsLoaded() then
 
 
 
-script_key="kuQoDnFgeRipnysIrKrGhcoLjpYFSUEn";
+script_key="CQVvybCUfPEXMXkWxPpPstXIUEOKNYSy";
 
 getgenv().petsGoConfig = {
     EVENT_EGG = false,
