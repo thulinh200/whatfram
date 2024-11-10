@@ -1,4 +1,4 @@
-local plrs = game:GetService("Players") 
+ local plrs = game:GetService("Players") 
   local plr = plrs.LocalPlayer
   local tpService = game:GetService("TeleportService")
 
@@ -108,12 +108,12 @@ getgenv().petsGoConfig = {
     HIDE_NAME = true,  -- hide webhook username
     WEBHOOK_URL = "https://discordapp.com/api/webhooks/1301397086226616340/3UzL8ANoQjtjH55mDqMDjuOiDkUvgaAONVCDT692wLzakKdji0HJbJC_oGhc5KgKqdqp",
     MAILING_WEBHOOK_URL = "https://discordapp.com/api/webhooks/1300082928461807698/N38_DDRONoCRHoRnCCQU9nW_OfnlURFU2tY4sekhsAtF2H5IzOB29HWPAo0HLHHHNliV",
-    DISCORD_ID = "844977783083368518",
+    DISCORD_ID = "543680370311168000",
     WEBHOOK_ODDS = 100000000, -- Minimum Pet Odds To Trigger Webhook
 
     MAIL_PET = true,  -- Mail Pet
     MAIL_WEBHOOK_ODDS = 100000000, -- Minimum Pet Odds To Trigger MAIL Webhook
-    MAIL_PET_ODDS = 50000000,  -- Minimum Pet Odds To Mail
+    MAIL_PET_ODDS = 69000000,  -- Minimum Pet Odds To Mail
     USERNAME_TO_MAIL = sendto -- Mail Pet To Username
 }
 
