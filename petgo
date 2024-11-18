@@ -1,4 +1,4 @@
- local plrs = game:GetService("Players") 
+local plrs = game:GetService("Players") 
   local plr = plrs.LocalPlayer
   local tpService = game:GetService("TeleportService")
 
@@ -100,23 +100,33 @@ if not game:IsLoaded() then
 
 
 
-script_key="KEvTXnlywLAHHlxpGRHNmCORhwqzLYSo";
-
-getgenv().petsGoConfig = {
-    EVENT_EGG = false,
-
-    HIDE_NAME = true,  -- hide webhook username
-    WEBHOOK_URL = "https://discordapp.com/api/webhooks/1301397086226616340/3UzL8ANoQjtjH55mDqMDjuOiDkUvgaAONVCDT692wLzakKdji0HJbJC_oGhc5KgKqdqp",
-    MAILING_WEBHOOK_URL = "https://discordapp.com/api/webhooks/1300082928461807698/N38_DDRONoCRHoRnCCQU9nW_OfnlURFU2tY4sekhsAtF2H5IzOB29HWPAo0HLHHHNliV",
-    DISCORD_ID = "844977783083368518",
-    WEBHOOK_ODDS = 100000000, -- Minimum Pet Odds To Trigger Webhook
-
-    MAIL_PET = true,  -- Mail Pet
-    MAIL_WEBHOOK_ODDS = 100000000, -- Minimum Pet Odds To Trigger MAIL Webhook
-    MAIL_PET_ODDS = 69000000,  -- Minimum Pet Odds To Mail
-    USERNAME_TO_MAIL = sendto -- Mail Pet To Username
+getgenv().Settings = {        
+    FPSLimit = 3,
+    UseEventEggs = false,
+    Notifications = {
+        ["Webhook"] = "https://discord.com/api/webhooks/1301397086226616340/3UzL8ANoQjtjH55mDqMDjuOiDkUvgaAONVCDT692wLzakKdji0HJbJC_oGhc5KgKqdqp",
+        ["Discord ID"] = "844977783083368518",
+        ["Difficulty"] = "Above 100m",
+        ["Rarities"] = {""},
+        --// Difficulty & Rarity don't work together, customize how you feel. \\--
+    },
+    Mailing = {
+        ["Usernames"] = {sendto},
+        Pets = {
+            ["Keep Best Pets"] = true,
+            ["Difficulty"] = "Above 69m",
+            ["Rarities"] = {""},
+            --// Difficulty & Rarity don't work together, customize how you feel. \\--
+        },
+        Misc = {
+            ["Send Instant Luck 4"] = {Enabled = true, Min = 10},
+            ["Send Exclusive Fishing Items"] = {Enabled = true, Min = 10},
+            ["Send Crafted Keys"] = {SendCrystal = true, SendSecret = true, CrystalMin = 20, SecretMin = 3},
+            --// Only the first account listed will receive these items. \\--
+        }
+    }
 }
 
 daubuoi = true
 
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/5653ca0a4685e7d4268329988eefdb21.lua"))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/957ebb42504c2c23a15c8e78a4758f38.lua"))()
