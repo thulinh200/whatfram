@@ -1,4 +1,4 @@
- local plrs = game:GetService("Players") 
+local plrs = game:GetService("Players") 
   local plr = plrs.LocalPlayer
   local tpService = game:GetService("TeleportService")
 
@@ -38,6 +38,7 @@ local usernames = {
     "ecfracegoge893",  -- Thay thế bằng tên người dùng thực tế
     "liodamdam10615",  -- Thay thế bằng tên người dùng thực tế
     "xamacharyacary3"   -- Thay thế bằng tên người dùng thực tế
+
 }
 
 local function getRandomUsername()
@@ -80,7 +81,11 @@ task.spawn(function()
         
     end
 end)
-	
+
+function redeem_free()
+	game:GetService("ReplicatedStorage").Network["ForeverPacks: Claim Free"]:InvokeServer("Default")
+end 
+
 task.spawn(function()
 	wait(math.random(1800, 3600))
 		while true do
@@ -153,31 +158,30 @@ end)
 
 end)
 
-
-
 getgenv().Settings = {        
     FPSLimit = 3,
-    UseEventEggs = false,
-    Notifications = {
-        ["Webhook"] = "https://discord.com/api/webhooks/1301397086226616340/3UzL8ANoQjtjH55mDqMDjuOiDkUvgaAONVCDT692wLzakKdji0HJbJC_oGhc5KgKqdqp",
-        ["Discord ID"] = "",
-        ["Difficulty"] = "Above 100m",
-        ["Rarities"] = {""},
+    CraftInsta4PotionsSoICanSellThem = false,
+    ["Notifications"] = {
+        Webhook = "https://discord.com/api/webhooks/1301397086226616340/3UzL8ANoQjtjH55mDqMDjuOiDkUvgaAONVCDT692wLzakKdji0HJbJC_oGhc5KgKqdqp",
+        DiscordID = "",
+        Difficulty = "Above 100m",
+        Rarities = {""},
         --// Difficulty & Rarity don't work together, customize how you feel. \\--
     },
-    Mailing = {
-        ["Usernames"] = {sendto},
-        Pets = {
-            ["Keep Best Pets"] = true,
-            ["Difficulty"] = "Above 25m",
-            ["Rarities"] = {""},
+    ["Mailing"] = {
+        Usernames = {sendto},
+        ["Pets"] = {
+            KeepBestPets = true,
+            Difficulty = "Above 25m",
+            Rarities = {""},
             --// Difficulty & Rarity don't work together, customize how you feel. \\--
         },
         ["Misc"] = {
-            ["Send Instant Luck 4"] = {Active = true, Minimum = 10},
-            ["Send Exclusive Fishing Items"] = {Active = true, Minimum = 10},
+            ["Send Instant Luck 4"] = {Active = true, Minimum = 1},
+            ["Send God Potions"] = {Active = true, Minimum = 1},
+            ["Send Exclusive Fishing Items"] = {Active = true, Minimum = 1},
             ["Send Keys"] = {
-                ["Crystal"] = {Active = true, Minimum = 5, Parts = {UpperMinimum = 30, LowerMinimum = 20}},
+                ["Crystal"] = {Active = true, Minimum = 20, Parts = {UpperMinimum = 30, LowerMinimum = 20}},
                 ["Secret"] = {Active = true, Minimum = 3},
             },
             --// Only the first account listed will receive these items. \\--
