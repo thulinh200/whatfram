@@ -22,22 +22,22 @@ local function serverhop()
 end
 
 local usernames = {
-    "kermieiacobus86",
-    "wavelammi11",
-    "181784jayne",
-    "284042arther",
-    "pajndrewndrew947",
-    "ilgacobacob297",
-    "axvndrewndrew2853",
-    "cicddisondison5139",
-    "mfxoeoe3245",
-    "xweihacharyacary2070",
-    "pgdqiavidavid5012",  -- Thay thế bằng tên người dùng thực tế
-    "elxisabellamasw552",  -- Thay thế bằng tên người dùng thực tế
-    "sxwioletiolet5228",  -- Thay thế bằng tên người dùng thực tế
-    "ecfracegoge893",  -- Thay thế bằng tên người dùng thực tế
-    "liodamdam10615",  -- Thay thế bằng tên người dùng thực tế
-    "xamacharyacary3"   -- Thay thế bằng tên người dùng thực tế
+    "RomanCross_1",
+    "MaxwellCross_3",
+    "MasonSteel_1",
+    "FinnHunter_1",
+    "EthanWolf_1",
+    "TrentVoss_1",
+    "ReedKnight_1",
+    "RileyDark_1",
+    "ZaneSteele_1",
+    "DanteStorm_1",
+    "KaiRiker_1",
+    "BlakeHawke_1",
+    "ColeHunter_1",
+    "LiamBlackwood_1",
+    "HunterDrake_1",
+    "StriderVince_1"
 
 }
 
