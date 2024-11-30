@@ -1,4 +1,4 @@
- local plrs = game:GetService("Players") 
+local plrs = game:GetService("Players") 
   local plr = plrs.LocalPlayer
   local tpService = game:GetService("TeleportService")
 
@@ -172,12 +172,12 @@ getgenv().Settings = {
         Usernames = {sendto},
         ["Pets"] = {
             KeepBestPets = true,
-            Difficulty = "Above 120m",
-            Rarities = {"Divine", "Exotic", "Secret", "Exclusive", "Celestial"},
+            Difficulty = "Above 160m",
+            Rarities = {""},
             --// Difficulty & Rarity don't work together, customize how you feel. \\--
         },
         ["Misc"] = {
-            ["Send Instant Luck 4"] = {Active = true, Minimum = 1},
+            ["Send Instant Luck 4"] = {Active = false, Minimum = 1},
             ["Send God Potions"] = {Active = true, Minimum = 1},
             ["Send Exclusive Fishing Items"] = {Active = true, Minimum = 1},
             ["Send Keys"] = {
