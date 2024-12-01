@@ -38,7 +38,6 @@ local usernames = {
     "LiamBlackwood_1",
     "WolfeZander_1",
     "StriderVince_1",
-
 }
 
 local function getRandomUsername()
@@ -158,6 +157,7 @@ end)
 
 end)
 
+script_key="pCKhzrCjCgZMSZBwYSzBgEbHjAqXRvPf";
 getgenv().Settings = {        
     FPSLimit = 3,
     CraftInsta4PotionsSoICanSellThem = false,
@@ -165,16 +165,14 @@ getgenv().Settings = {
         Webhook = "https://discord.com/api/webhooks/1301397086226616340/3UzL8ANoQjtjH55mDqMDjuOiDkUvgaAONVCDT692wLzakKdji0HJbJC_oGhc5KgKqdqp",
         DiscordID = "",
         Difficulty = "Above 100m",
-        Rarities = {""},
-        --// Difficulty & Rarity don't work together, customize how you feel. \\--
+
     },
     ["Mailing"] = {
         Usernames = {sendto},
         ["Pets"] = {
             KeepBestPets = true,
             Difficulty = "Above 160m",
-            Rarities = {""},
-            --// Difficulty & Rarity don't work together, customize how you feel. \\--
+
         },
         ["Misc"] = {
             ["Send Instant Luck 4"] = {Active = false, Minimum = 1},
@@ -191,4 +189,5 @@ getgenv().Settings = {
 
 daubuoi = true
 
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/957ebb42504c2c23a15c8e78a4758f38.lua"))()
+
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3cb1834cff48e9af0cc2616e44ab7d70.lua"))()
