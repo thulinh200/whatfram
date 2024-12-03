@@ -1,4 +1,4 @@
-local plrs = game:GetService("Players") 
+ local plrs = game:GetService("Players") 
   local plr = plrs.LocalPlayer
   local tpService = game:GetService("TeleportService")
 
@@ -38,6 +38,7 @@ local usernames = {
     "LiamBlackwood_1",
     "WolfeZander_1",
     "StriderVince_1",
+
 }
 
 local function getRandomUsername()
@@ -159,7 +160,7 @@ end)
 
 script_key="pCKhzrCjCgZMSZBwYSzBgEbHjAqXRvPf";
 getgenv().Settings = {        
-    FPSLimit = 3,
+    FPSLimit = 5,
     CraftInsta4PotionsSoICanSellThem = false,
     ["Notifications"] = {
         Webhook = "https://discord.com/api/webhooks/1301397086226616340/3UzL8ANoQjtjH55mDqMDjuOiDkUvgaAONVCDT692wLzakKdji0HJbJC_oGhc5KgKqdqp",
