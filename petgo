@@ -22,24 +22,7 @@ local function serverhop()
 end
 
 local usernames = {
-    "kethemhanh3",
-    "johnwhichh5",
-    "johnwhichh4",
-    "johnwhichh6",
-    "johnwhichh7",
-    "johnwhichh8",
-    "johnwhichh12",
-    "johnwhichh11",
-    "johnwhichh13",
-    "johnwhichh10",
-"donwhich2",
-"donwhich3",
-"donwhich8",
-"donwhich4",
-"donwhich9",
-"donwhich12",
-"donwhich7",
-"donwhich10"
+
 
 }
 
