@@ -162,7 +162,7 @@ end)
 
 script_key="pCKhzrCjCgZMSZBwYSzBgEbHjAqXRvPf";
 getgenv().Settings = {        
-    FPSLimit = 5,
+    FPSLimit = 3,
     CraftInsta4PotionsSoICanSellThem = false,
     ["Notifications"] = {
         Webhook = "https://discord.com/api/webhooks/1301397086226616340/3UzL8ANoQjtjH55mDqMDjuOiDkUvgaAONVCDT692wLzakKdji0HJbJC_oGhc5KgKqdqp",
