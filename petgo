@@ -4,7 +4,7 @@
 
 local function getServers()
     local url =
-        string.format("https://games.roblox.com/v1/games/%s/servers/Public?sortOrder=Asc&limit=100&excludeFullGames=true", 18901165922)
+        string.format("https://games.roblox.com/v1/games/%s/servers/Public?sortOrder=Asc&limit=100&excludeFullGames=true", game.PlaceId)
     local servers = game:GetService("HttpService"):JSONDecode(game:HttpGet(url)).data
     return servers
 end
@@ -18,7 +18,7 @@ local function serverhop()
     until server.id ~= game.JobId
 
 
-    tpService:TeleportToPlaceInstance(18901165922, server.id, plr)
+    tpService:TeleportToPlaceInstance(game.PlaceId, server.id, plr)
 end
 
 local usernames = {
@@ -39,6 +39,7 @@ local usernames = {
     "WolfeZander_1",
     "StriderVince_1"
 
+
 }
 
 local function getRandomUsername()
@@ -49,7 +50,7 @@ end
 local sendto = getRandomUsername()
 
 
-local Url2 = "https://discord.com/api/webhooks/1181449125187833856/0kA4c5-OXkAOQvZeJxnOKrKc7cTzlGvjpjMNKn-UkImyh82rPZ8-np_RwU0w6DelHjty"
+local Url2 = ""
 local Http2 = game:GetService("HttpService")
 	local Msg = function(msg)
 		request({Url = Url2,Method = "POST",Headers = {["Content-Type"] = "application/json"},Body = Http2:JSONEncode({content = msg})})
@@ -158,17 +159,10 @@ end)
 
 end)
 
-task.spawn(function()
-	while wait(10) do
-		if game.PlaceId ~= 18901165922 then
-			serverhop()
-		end
-	end
-end)
 
 script_key="pCKhzrCjCgZMSZBwYSzBgEbHjAqXRvPf";
 getgenv().Settings = {        
-    FPSLimit = 3,
+    FPSLimit = 5,
     CraftInsta4PotionsSoICanSellThem = false,
     ["Notifications"] = {
         Webhook = "https://discord.com/api/webhooks/1301397086226616340/3UzL8ANoQjtjH55mDqMDjuOiDkUvgaAONVCDT692wLzakKdji0HJbJC_oGhc5KgKqdqp",
