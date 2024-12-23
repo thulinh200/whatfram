@@ -37,7 +37,7 @@ local usernames = {
     "ColeHunter_1",
     "LiamBlackwood_1",
     "WolfeZander_1",
-    "StriderVince_1",
+    "StriderVince_1"
 }
 
 local function getRandomUsername()
@@ -158,9 +158,9 @@ end)
 end)
 
 
-script_key="pCKhzrCjCgZMSZBwYSzBgEbHjAqXRvPf";
+script_key="JzCcFHdqsKYEXELzDwacuiTCyVqIGLVY";
 getgenv().Settings = {        
-    FPSLimit = 5,
+    FPSLimit = 3,
     CraftInsta4PotionsSoICanSellThem = false,
     ["Notifications"] = {
         Webhook = "https://discord.com/api/webhooks/1301397086226616340/3UzL8ANoQjtjH55mDqMDjuOiDkUvgaAONVCDT692wLzakKdji0HJbJC_oGhc5KgKqdqp",
@@ -180,9 +180,13 @@ getgenv().Settings = {
             ["Send God Potions"] = {Active = true, Minimum = 1},
             ["Send Exclusive Fishing Items"] = {Active = true, Minimum = 1},
             ["Send Keys"] = {
-                ["Crystal"] = {Active = true, Minimum = 20, Parts = {UpperMinimum = 30, LowerMinimum = 20}},
+                ["Crystal"] = {Active = true, Minimum = 20, Parts = {UpperMinimum = 30, LowerMinimum = 10}},
                 ["Secret"] = {Active = true, Minimum = 3},
             },
+		["Send Lootboxes"] = {
+                ["Hype & Huge"] = {Active = true, Minimum = 1},
+                ["Other"] = {Active = true, Minimum = 20},
+	},
             --// Only the first account listed will receive these items. \\--
         }
     }
