@@ -27,4 +27,4 @@ getgenv().petsGoConfig = {
     USERNAME_TO_MAIL = {"RomanCross_1", "MaxwellCross_3", "FinnHunter_1", "StriderVince_1", "EthanWolf_1", "TrentVoss_1", "ReedKnight_1", "RileyDark_1", "ZaneSteele_1", "DanteStorm_1", "BlakeHawke_1", "ColeHunter_1", "LiamBlackwood_1", "WolfeZander_1", "ricktroi0", "Narutoviip1", "kakarott811", "jonydang223", "devkoi_9", "VengefulHero0", "NeonSpecter_vip", "LunarPhantom88", "VoidStryker1", "NightViper77", "PhantomEclipse2", "ArcaneHunterr", "FrozenWraith_o", "ShadowDragoon_2", "CrimsonPhoenix_top", "VortexNova03", "RogueDragon25", "VenomPhoenix0", "CyberVanguard_vip", "SoulEater_top", "EchoViper1", "VelvetStorm_bop", "VioletEmber_99", "StarryWhisper_99", "AkiraHaru_1", "YukiNaito_no1", "YuutoIsamu1", "RenjiAkuma_top", "SoraKage8", "HayatoRyu1u0"}
 }
 
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/e81ea00ef49a917bb1242da4f41dc4f9.lua"))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/5653ca0a4685e7d4268329988eefdb21.lua"))()
