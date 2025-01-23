@@ -35,7 +35,6 @@ local usernames = {
     "BlakeHawke_1",
     "ColeHunter_1",
     "LiamBlackwood_1",
-    "WolfeZander_1",
     "ricktroi0",
     "Narutoviip1",
     "kakarott811",
@@ -43,7 +42,6 @@ local usernames = {
     "devkoi_9",
     "VengefulHero0",
     "NeonSpecter_vip",
-    "LunarPhantom88",
     "VoidStryker1",
     "NightViper77",
     "PhantomEclipse2",
@@ -51,21 +49,12 @@ local usernames = {
     "FrozenWraith_o",
     "ShadowDragoon_2",
     "CrimsonPhoenix_top",
-    "VortexNova03",
     "RogueDragon25",
     "VenomPhoenix0",
     "CyberVanguard_vip",
     "SoulEater_top",
-    "EchoViper1",
-    "VelvetStorm_bop",
-    "VioletEmber_99",
-    "StarryWhisper_99",
     "AkiraHaru_1",
     "YukiNaito_no1",
-    "YuutoIsamu1",
-    "RenjiAkuma_top",
-    "SoraKage8",
-    "HayatoRyu1u0"
 }
 
 local function getRandomUsername()
