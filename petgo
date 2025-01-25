@@ -201,7 +201,7 @@ getgenv().petsGoConfig = {
 	MINE_ALL_ORES = true,
 
     -- Allowed enchant keywords : Criticals, Loot, Speed, Strength, Chests, Diamonds, Huges, Lightning, TNT
-    PICKAXE_ENCHANTS = {"Speed", "Speed", "Strength"},
+    PICKAXE_ENCHANTS = {"Speed", "Loot", "Criticals"},
 
     MAILING = true,  -- Auto mail
     MAIL_FISHING_ROD = true,  -- true = mail, false = keep fishing rod on account (FASTER Fishing)
