@@ -184,7 +184,6 @@ script_key="pzJWJPYLuguSaphivtczaaVsspjwvdmq";
 getgenv().petsGoConfig = {
     -- true/false
     IGNORE_FULL_CHARGE_MEGA_EGG = false,
-
     CONSUME_CORRUPTED_HUGE_BAIT = false,
     CONSUME_ALL_ENCHANT_SAFE = false,
     CONSUME_ALL_MINING_CHEST = false,
