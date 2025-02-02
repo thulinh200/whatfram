@@ -43,7 +43,7 @@ local usernames = {
     "VengefulHero0",
     "NeonSpecter_vip",
     "VoidStryker1",
-    "",
+    "HayatoRyu1u0",
     "PhantomEclipse2",
     "ArcaneHunterr",
     "FrozenWraith_o",
@@ -55,6 +55,10 @@ local usernames = {
     "SoulEater_top",
     "AkiraHaru_1",
     "YukiNaito_no1",
+    "WolfeZander_1",
+    "RenjiAkuma_top",
+    "VortexNova03",
+    "EchoViper1",
 }
 
 local function getRandomUsername()
