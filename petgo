@@ -22,15 +22,6 @@ local function serverhop()
 end
 
 local usernames = {
-    "ShadowReaper_402",
-    "ShadowHunterX1021",
-    "ThunderBeast_12372",
-    "MysticSoul68",
-    "InfernoWraith4",
-    "DarkPhoenix_116",
-    "StormBringer_130",
-    "Top_Hot999",
-    "Tony_nguyen3909",
     "RomanCross_1",
     "RomanCross_1",
     "MaxwellCross_3",
