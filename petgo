@@ -185,8 +185,6 @@ local web3 = "Z_rxLlN9b6Dfe1rY91wlGWY3CkvxtyGrKQFGLMM1SYNWD4DDwhL5wfQ_-oEsHwEBYS
 
 script_key="pzJWJPYLuguSaphivtczaaVsspjwvdmq";
 
-script_key="pzJWJPYLuguSaphivtczaaVsspjwvdmq";
-
 getgenv().petsGoConfig = {
     -- true/false
     CONSUME_CORRUPTED_HUGE_BAIT = true,
