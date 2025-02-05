@@ -23,7 +23,6 @@ end
 
 local usernames = {
     "RomanCross_1",
-    "RomanCross_1",
     "MaxwellCross_3",
     "FinnHunter_1",
     "StriderVince_1",
@@ -44,9 +43,7 @@ local usernames = {
     "devkoi_9",
     "VengefulHero0",
     "NeonSpecter_vip",
-    "LunarPhantom88",
     "VoidStryker1",
-    "NightViper77",
     "PhantomEclipse2",
     "ArcaneHunterr",
     "FrozenWraith_o",
@@ -58,14 +55,9 @@ local usernames = {
     "CyberVanguard_vip",
     "SoulEater_top",
     "EchoViper1",
-    "VelvetStorm_bop",
-    "VioletEmber_99",
-    "StarryWhisper_99",
     "AkiraHaru_1",
     "YukiNaito_no1",
-    "YuutoIsamu1",
     "RenjiAkuma_top",
-    "SoraKage8",
     "HayatoRyu1u0"
 }
 
