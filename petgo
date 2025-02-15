@@ -192,6 +192,7 @@ getgenv().petsGoConfig = {
     CONSUME_ALL_MINING_CHEST = true,
     CONSUME_EVENT_GIFT_BAG = false,
     CONSUME_EVENT_EGG = false, -- Hype eggs not included
+	IGNORE_DICE_COMBO = false,
 
 	WEBHOOK_URL = web .. web1,
     MAILING_WEBHOOK_URL = web2 .. web3,
@@ -202,6 +203,7 @@ getgenv().petsGoConfig = {
     MINE_ALL_ORES = true,  -- true = all ore, false = runic & event ore
     
     MAILING = true,  -- Auto mail
+	SHOW_PET_WEBHOOK_USERNAME = false,
     MAIL_WEBHOOK_ODDS = 100000000, -- Minimum Pet Odds To Trigger MAIL Webhook
     MAIL_PET_ODDS = 100000000,  -- Minimum Pet Odds To Mail
 
