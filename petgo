@@ -192,7 +192,10 @@ getgenv().petsGoConfig = {
     CONSUME_ALL_MINING_CHEST = true,
     CONSUME_EVENT_GIFT_BAG = false,
     CONSUME_EVENT_EGG = true, -- Hype eggs not included
-	IGNORE_DICE_COMBO = false,
+included
+    CONSUME_EVENT_TICKET = true,
+    CONSUME_INSTA_LUCK_4 = true,
+    IGNORE_DICE_COMBO = false, -- Consume Insta Luck 3 without combo
 
 	WEBHOOK_URL = web .. web1,
     MAILING_WEBHOOK_URL = web2 .. web3,
