@@ -1,27 +1,4 @@
- local plrs = game:GetService("Players") 
-  local plr = plrs.LocalPlayer
-  local tpService = game:GetService("TeleportService")
-
-local function getServers()
-    local url =
-        string.format("https://games.roblox.com/v1/games/%s/servers/Public?sortOrder=Asc&limit=100&excludeFullGames=true", game.PlaceId)
-    local servers = game:GetService("HttpService"):JSONDecode(game:HttpGet(url)).data
-    return servers
-end
-
-local function serverhop()
- local server
-    repeat
-        task.wait(1)
-        server = getServers()[Random.new():NextInteger(1, 100)]
-
-    until server.id ~= game.JobId
-
-
-    tpService:TeleportToPlaceInstance(game.PlaceId, server.id, plr)
-end
-
-local usernames = {
+local alts = {
 "VenomPhoenix0",
 "FinnHunter_1",
 "RenjiAkuma_top",
@@ -45,69 +22,208 @@ local usernames = {
 "Top_Hot999",
 "Lucipham1",
 }
+local plazaid = 19006211286
+ local plrs = game:GetService("Players")
+  local plr = plrs.LocalPlayer
+  
+  local replicatedStorage = game:GetService("ReplicatedStorage")
+  local Lib = require(replicatedStorage.Library)
+  local plrs = game:GetService("Players") 
+  local plr = plrs.LocalPlayer
+  local tpService = game:GetService("TeleportService")
+  
+	local getPlayers = plrs:GetPlayers()
+	local PlayerInServer = #getPlayers
+	local HttpService = game:GetService("HttpService")
 
-local function getRandomUsername()
-    local index = math.random(1, #usernames)
-    return usernames[index]
+
+
+
+local function getServers()
+    local url =
+        string.format("https://games.roblox.com/v1/games/%s/servers/Public?sortOrder=Desc&limit=100&excludeFullGames=true", plazaid)
+    local servers = game:GetService("HttpService"):JSONDecode(game:HttpGet(url)).data
+    return servers
 end
 
-local sendto = getRandomUsername()
-
-local web4 = "https://discord.com/api/webhooks/1330886743590703175/"
-local web5 = "TDAvi0vzfBZU-UbEDwUg3RtEzy_Xz8BVUu2NKljEso4PezFUDuOJ1ZI5BJoL2x2_VuAq"
-
-local Url2 = web4 .. web5
-local Http2 = game:GetService("HttpService")
-	local Msg = function(msg)
-		request({Url = Url2,Method = "POST",Headers = {["Content-Type"] = "application/json"},Body = Http2:JSONEncode({content = msg})})
-	end
-
-
-local Players = game:GetService('Players')
-local Client = Players.LocalPlayer
-_G.EnableFriendRequest = true
-
-local function SendFriendRequests()
-	
-    for _, player in ipairs(Players:GetPlayers()) do
-        if player ~= Client then  
-            Client:RequestFriendship(player)
-			Msg(Client.Name.." đã gửi yêu cầu kết bạn tới "..player.Name)
-			task.wait(600)
-        end
+local function serverhop()
+ local server
+    repeat
         task.wait(1)
-    end
+        server = getServers()[Random.new():NextInteger(1, 100)]
+
+    until server.id ~= game.JobId
+
+
+    tpService:TeleportToPlaceInstance(plazaid, server.id, plr)
 end
-
-
-task.spawn(function()		
-    if _G.EnableFriendRequest then
-		wait(600)
-		SendFriendRequests()
-
-        
-    end
-end)
-
 
 
 task.spawn(function()
-	wait(math.random(1800, 3600))
-		while true do
+	wait(math.random(600, 900))
+	while true do
 	
 	serverhop()
 	wait(1)
-end
+	end
+end)
+
+
+local web = "https://discord.com/api/webhooks/1331926354874204221/"
+local web1 = "vxpGYZgmiaVxOv1mhzEWTH5BCeRkmPiRx3CJgwU2NklYOfQIhPJWL6TQtU8iPPl41ivo"
+
+
+ if not game:IsLoaded() then
+    game.Loaded:Wait()
+  end
+
+--// EVERYTHING here is an EXAMPLE, everything is EDITABLE, change to your LIKING (Display Name System) \\--
+getgenv().Settings = {
+    Sniper = {
+        Active = false,
+        ["Items"] = {
+            SearchTerminal = {
+                [[ Search Items via Trading Terminal, Custom Keywords NOT supported here. ]],
+                ["Nice Egg"] = {Price = "5%", InventoryLimit = 355},
+                ["Huge Night Terror Cat"] = {Price = "50%", UseCosmicValues = true},
+            },
+            ["All Class: Misc"] = {Price = 5},
+            ["All Rarity: Celestial"] = {Price = "50%"},
+            ["Shiny Rainbow Broomstick Cat"] = {Price = "+2%"},
+            ["All Huges"] = {Price = "15m", DetectManipulation = true, AllTypes = true},
+        },
+        ["Switch Servers"] = {Active = true, SecondDelay = 7, OnlyPRO = false},
+        ["Webhook"] = {Active = true, URL = web .. web1},
+        ["Kill Switch"] = {
+            ["Limits Reached"] = false,
+            ["Diamonds Hit: 25m"] = false,
+            ["60 Minutes Timer"] = false,
+            ["^^^ Switch To Selling"] = false,
+        },
+    },
+
+    Seller = {
+        Active = true,
+        ["Items"] = {
+            ["All Huges"] = {Price = "3%", AllTypes = true},
+			["Exclusive"] = {Price = "5%"},
+			["Diamond"] = {Price = "5%"},
+			["Emerald"] = {Price = "5%"},
+			["Mastery"] = {Price = "5%"},
+			["10,000x Thieving Egg"] = {Price = "5%"},
+			["10x Thieving Egg"] = {Price = "5%"},
+			["1x Thieving Egg"] = {Price = "5%"},
+			["100x Thieving Egg"] = {Price = "5%", Amount = 5000},
+			["Heartbreak Egg"] = {Price = "5%"},
+			["Cupids Egg"] = {Price = "5%"},
+			["Magma Egg"] = {Price = "5%"},
+			["Holiday Egg"] = {Price = "5%"},
+			["Santa Egg"] = {Price = "5%"},
+			["Naughty Egg"] = {Price = "5%"},
+			["Hype Egg"] = {Price = "6%"},
+			["Nice Egg"] = {Price = "5%"},
+			["Winter Egg"] = {Price = "5%"},
+			["Huge Egg"] = {Price = "5%"},
+			["Thieving Present"] = {Price = "5%"},
+			["Exotic Thieving Chest"] = {Price = "5%"},
+			["Legendary Thieving Chest"] = {Price = "5%"},
+			["Heartbreak Present"] = {Price = "5%"},
+			["Valentines Present"] = {Price = "5%"},
+			["Tech Gift"] = {Price = "5%"},
+			["Titanic Mining Chest"] = {Price = "5%"},
+			["Titanic Present"] = {Price = "5%"},
+			["Exclusive Enchant Safe"] = {Price = "5%"},
+			["Legendary Enchant Safe"] = {Price = "5%"},
+			["Celestial Enchant Safe"] = {Price = "5%"},
+			["Abyssal Treasure Chest"] = {Price = "5%"},
+			["Naughty Gift"] = {Price = "5%"},
+			["Holiday Gift"] = {Price = "5%"},
+			["Nice Gift"] = {Price = "5%"},
+			["Celestial Mining Chest"] = {Price = "5%"},
+			["Runic Mining Chest"] = {Price = "5%"},
+			["Legendary Mining Chest"] = {Price = "5%"},
+			["Valentines Spinny Wheel Ticket"] = {Price = "5%"},
+			["Diamond Fishing Rod"] = {Price = "5%"},
+			["Frozen Fishing Rod"] = {Price = "5%"},
+			["Corrupted Fishing Rod"] = {Price = "5%"},
+			["Crystal Key"] = {Price = "5%"},
+			["Crystal Key Upper Half"] = {Price = "5%"},
+			["Crystal Key Lower Half"] = {Price = "5%"},
+			["Exclusive Treasure Chest"] = {Price = "5%"},
+			["Thieving Luck Scroll 1"] = {Price = "5%"},
+			["Thieving Speed Scroll 1"] = {Price = "5%"},
+			["Thieving Success Scroll 1"] = {Price = "5%"},
+			["Magma Scroll 1"] = {Price = "5%"},
+			["Metal Detector 1"] = {Price = "5%"},
+			["Ice Fishing Scroll 1"] = {Price = "5%"},
+			["Holiday Damage Scroll 1"] = {Price = "5%"},
+			["Santa's Scroll 1"] = {Price = "5%"},
+			["Fishing Bait 5"] = {Price = "5%"},
+			["Corrupted Huge Bait 1"] = {Price = "5%"},
+			["Fishing Bait 4"] = {Price = "5%"},
+			["Thieving God Potion 1"] = {Price = "6%"},
+			["Heartbreak God Potion 1"] = {Price = "6%"},
+			["Valentines God Potion 1"] = {Price = "6%"},
+			["Holiday God Potion 1"] = {Price = "6%"},
+			["Winter God Potion 1"] = {Price = "6%"},
+			["Jelly God Potion 1"] = {Price = "6%"},
+			["God Potion 1"] = {Price = "6%"},
+			["Autumn God Potion 1"] = {Price = "6%"},
+			["Instant Luck Potion 4"] = {Price = "5%"},
+			["All Rarity: Exclusive"] = {Price = "3%"},
+			["All Rarity: Secret"] = {Price = "3%"},
+			["All Rarity: Celestial"] = {Price = "3%"},
+			["All Rarity: Superior"] = {Price = "3%"},
+        },
+        ["Switch Servers"] = {Active = true, MinuteDelay = 20, OnlyPRO = false},
+        ["Webhook"] = {Active = true, URL = web .. web1},
+        ["Kill Switch"] = {
+            ["Booth Runout"] = false,
+            ["Diamonds Hit: 1b"] = false,
+            ["60 Minutes Timer"] = false,
+            ["^^^ Switch To Sniping"] = false,
+        },
+        ["Diamonds Sendout"] = {Active = true, Username = "jonydep111", Amount = "10m"},
+    },
+
+    [[ Thank you for using System Exodus <3! ]]
+}
+
+
+
+
+game:GetService("RunService"):Set3dRenderingEnabled(false)
+
+
+task.spawn(function()
+    while task.wait(60) do
+        if #game.Players:GetPlayers() < 15 then
+            serverhop()
+        end
+    end
 end)
 
 
 
-if not game:IsLoaded() then
-    game.Loaded:Wait()
-  end
+
+
 
 task.spawn(function()
+wait(30)
+if game.PlaceId ~= 19006211286 then
+script_key="XAdjDGBFdnbHGZdFSqaweDWenvpbEFRP";
 
+daubuoi = true
+
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3b58d9c50c5ea74f255af40a8f735773.lua"))()
+end
+end)
+
+
+if game.PlaceId == 19006211286 then
+
+
+task.spawn(function()
 local GroupService = game:GetService("GroupService")
 local groupIds = {5060810}
 local Moderators = {"BuildIntoGames"}
@@ -157,43 +273,52 @@ for _, player in ipairs(game.Players:GetPlayers()) do
     checkPlayer(player)
 end
 
-game.Players.PlayerAdded:Connect(function(player)
-    checkPlayer(player)
+for i = 1, PlayerInServer do
+	for ii = 1,#alts do
+        if getPlayers[i].Name == alts[ii] and alts[ii] ~= plrs.LocalPlayer.Name then
+        	while true do
+				serverhop()
+			task.wait(1)
+	    	end
+        end
+    end
+end
 end)
 
+plrs.PlayerAdded:Connect(function(player)
+	checkPlayer(player)
+	task.wait()
+	for i = 1,#alts do
+		if player.Name == alts[i] and alts[i] ~= plrs.LocalPlayer.Name then
+			task.wait(1)
+	    	serverhop()
+			
+			
+        end
+    end
 end)
 
-local web = "https://discord.com/api/webhooks/1331539343495401472/"
-local web1 = "5D-Idt1_xt_8LCDTCm-GaW64gelRm5y7xr7mox-EwGjpRNPjGVODNJal93VE88Zh3ZRL"
-local web2 = "https://discord.com/api/webhooks/1331539457656094740/"
-local web3 = "Z_rxLlN9b6Dfe1rY91wlGWY3CkvxtyGrKQFGLMM1SYNWD4DDwhL5wfQ_-oEsHwEBYSNF"
 
-script_key="pzJWJPYLuguSaphivtczaaVsspjwvdmq";
 
-getgenv().petsGoConfig = {
-	AUTO_RESTART = true,
-    -- true/false (true = consume, false = automail)
-    CONSUME_CORRUPTED_HUGE_BAIT = true,
-    CONSUME_ALL_ENCHANT_SAFE = false,
-    CONSUME_ALL_MINING_CHEST = true,
-    CONSUME_EVENT_EGG = false, -- Hype eggs not included
-    CONSUME_ALL_THIEVING_CHEST = false,
-    CONSUME_INSTA_LUCK_4 = true,
-    IGNORE_DICE_COMBO = false, -- Consume Insta Luck 3 without combo
-	WEBHOOK_URL = web .. web1,
-    MAILING_WEBHOOK_URL = web2 .. web3,
-    DISCORD_ID = "1168121186790686779",  -- Required!!! (For public-webhook)
-    WEBHOOK_ODDS = 100000000, -- Minimum Pet Odds To Trigger Webhook
 
-    DIAMOND_EGG = true,  -- true = Diamond Egg, false = F2P Egg
-    MINE_ALL_ORES = true,  -- true = all ore, false = runic & event ore
-    
-    MAILING = true,  -- Auto mail
-	SHOW_PET_WEBHOOK_USERNAME = false,
-    MAIL_WEBHOOK_ODDS = 100000000, -- Minimum Pet Odds To Trigger MAIL Webhook
-    MAIL_PET_ODDS = 100050000,  -- Minimum Pet Odds To Mail
 
-    USERNAME_TO_MAIL = {sendto} -- Mail to username, Example : USERNAME_TO_MAIL = {"username1", "username2"} 
-}
+script_key="XAdjDGBFdnbHGZdFSqaweDWenvpbEFRP";
 
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/5653ca0a4685e7d4268329988eefdb21.lua"))()
+daubuoi = true
+
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3b58d9c50c5ea74f255af40a8f735773.lua"))()
+
+	
+
+
+else
+
+daubuoi = true
+
+while true do
+	
+	serverhop()
+	wait(1)
+end
+
+end
