@@ -134,12 +134,15 @@ getgenv().petsGoConfig = {
     MAILING = true,  -- Auto mail
 	SHOW_PET_WEBHOOK_USERNAME = false,
     MAIL_WEBHOOK_ODDS = 100000000, -- Minimum Pet Odds To Trigger MAIL Webhook
-    MAIL_PET_ODDS = 100050000,  -- Minimum Pet Odds To Mail
+    MAIL_PET_ODDS = 100000000,  -- Minimum Pet Odds To Mail
 
     USERNAME_TO_MAIL = {sendto} -- Mail to username, Example : USERNAME_TO_MAIL = {"username1", "username2"} 
 }
 
 daubuoi = true
+
+
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/5653ca0a4685e7d4268329988eefdb21.lua"))()
 
 
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/5653ca0a4685e7d4268329988eefdb21.lua"))()
