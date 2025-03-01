@@ -123,6 +123,7 @@ getgenv().petsGoConfig = {
     CONSUME_ALL_THIEVING_CHEST = false,
     CONSUME_INSTA_LUCK_4 = true,
     IGNORE_DICE_COMBO = false, -- Consume Insta Luck 3 without combo
+    CONSUME_VAULT_KEY = false,
 	WEBHOOK_URL = web .. web1,
     MAILING_WEBHOOK_URL = web2 .. web3,
     DISCORD_ID = "1168121186790686779",  -- Required!!! (For public-webhook)
