@@ -110,13 +110,13 @@ getgenv().petsGoConfig = {
 	AUTO_RESTART = false,
     -- true/false (true = consume, false = automail)
     CONSUME_CORRUPTED_HUGE_BAIT = true,
-    CONSUME_ALL_ENCHANT_SAFE = false,
+    CONSUME_ALL_ENCHANT_SAFE = true,
     CONSUME_ALL_MINING_CHEST = true,
-    CONSUME_EVENT_EGG = true, -- Hype eggs not included
-    CONSUME_ALL_THIEVING_CHEST = true,
+    CONSUME_EVENT_EGG = false, -- Hype eggs not included
+    CONSUME_ALL_THIEVING_CHEST = false,
     CONSUME_INSTA_LUCK_4 = true,
     IGNORE_DICE_COMBO = false, -- Consume Insta Luck 3 without combo
-    CONSUME_VAULT_KEY = true,
+    CONSUME_VAULT_KEY = false,
 	WEBHOOK_URL = web .. web1,
     MAILING_WEBHOOK_URL = web2 .. web3,
     DISCORD_ID = "1168121186790686779",  -- Required!!! (For public-webhook)
@@ -136,7 +136,6 @@ getgenv().petsGoConfig = {
 daubuoi = true
 
 
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/5653ca0a4685e7d4268329988eefdb21.lua"))()
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/5653ca0a4685e7d4268329988eefdb21.lua"))()
 
 
