@@ -23,7 +23,6 @@ end
 
 local usernames = {
 "VenomPhoenix0",
-"FinnHunter_1",
 "RenjiAkuma_top",
 "RogueDragon25",
 "YukiNaito_no1",
@@ -33,16 +32,10 @@ local usernames = {
 "ricktroi0",
 "CrimsonPhoenix_top",
 "FrozenWraith_o",
-"AkiraHaru_1",
 "devkoi_9",
 "StriderVince_1",
 "ShadowDragoon_2",
-"VelvetStorm_bop",
 "StarryWhisper_99",
-"IvorySpecter0",
-"YuutoIsamu1",
-"LunarPhantom88",
-"Top_Hot999",
 "Lucipham1",
 }
 
