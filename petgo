@@ -21,7 +21,7 @@ local function serverhop()
     tpService:TeleportToPlaceInstance(game.PlaceId, server.id, plr)
 end
 
-local alts = {
+local usernames = {   
     "aIzP6EBk",
     "xdG0ecK9",
     "MP1hKrEZ",
