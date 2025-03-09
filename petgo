@@ -21,7 +21,7 @@ local function serverhop()
     tpService:TeleportToPlaceInstance(game.PlaceId, server.id, plr)
 end
 
-local usernames = {
+local alts = {
     "aIzP6EBk",
     "xdG0ecK9",
     "MP1hKrEZ",
@@ -45,7 +45,18 @@ local usernames = {
     "EuNyDkTm",
     "hAqMcBHW",
     "WjUxBPKr",
-    "mcdsQVpV"
+    "mcdsQVpV",
+    "aOEa2Arm",
+    "Ls3ppbrZ",
+    "HyndNTcw",
+    "zO78YZ3C",
+    "YHnQfca2",
+    "ZZS0wzK2",
+    "Gs3Y1dbm",
+    "XqFXxCS9",
+    "IvwKpnne",
+    "ii96TGWi",
+    "DjBQeBWl"
 }
 
 local function getRandomUsername()
