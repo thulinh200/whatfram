@@ -127,7 +127,7 @@ local web3 = "5D-Idt1_xt_8LCDTCm-GaW64gelRm5y7xr7mox-EwGjpRNPjGVODNJal93VE88Zh3Z
 script_key="pzJWJPYLuguSaphivtczaaVsspjwvdmq";
 
 getgenv().petsGoConfig = {
-	AUTO_RESTART = false,
+	AUTO_RESTART = true,
     -- true/false (true = consume, false = automail)
      CONSUME_CORRUPTED_HUGE_BAIT = true,
     CONSUME_ALL_MINING_CHEST = true,
