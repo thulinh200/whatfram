@@ -121,19 +121,19 @@ local web1 = "Z_rxLlN9b6Dfe1rY91wlGWY3CkvxtyGrKQFGLMM1SYNWD4DDwhL5wfQ_-oEsHwEBYS
 local web2 = "https://discord.com/api/webhooks/1331539343495401472/"
 local web3 = "5D-Idt1_xt_8LCDTCm-GaW64gelRm5y7xr7mox-EwGjpRNPjGVODNJal93VE88Zh3ZRL"
 
-script_key="pzJWJPYLuguSaphivtczaaVsspjwvdmq";
+script_key="MOHBTWsfJmvEhYGNAtEYucsgKFsTdLJQ";
 
 getgenv().petsGoConfig = {
-	AUTO_RESTART = true,
+    AUTO_RESTART = true,
     -- true/false (true = consume, false = automail)
-     CONSUME_CORRUPTED_HUGE_BAIT = true,
+    CONSUME_CORRUPTED_HUGE_BAIT = true,
     CONSUME_ALL_MINING_CHEST = true,
-CONSUME_ALL_THIEVING_CHEST = true,
     CONSUME_EVENT_EGG = true, -- Hype eggs not included
     CONSUME_INSTA_LUCK_4 = true,
     CONSUME_VAULT_KEY = true,
     CONSUME_KRAKEN_TENTACLE = true,
     CONSUME_BUCKET_O_CHUM = true,
+
 	WEBHOOK_URL = web .. web1,
     MAILING_WEBHOOK_URL = web2 .. web3,
     DISCORD_ID = "1168121186790686779",  -- Required!!! (For public-webhook)
