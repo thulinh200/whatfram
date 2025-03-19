@@ -20,5 +20,5 @@ _G.GUSE_SPRINKLERS = false -- set to true to use sprinklers in your destination 
 _G.GUSE_FLAGS = {"Fortune Flag","Coins Flag","Diamonds Flag"} -- Default: nil, To use specific flags all the time in your destination zone.
 _G.GENCHANTS = {"Coins", "Strong Pets", "Criticals", "Strong Pets", "Criticals"}
 _G.GWEBHOOK_USERID = "1067392103585423440"
-_G.GWEBHOOK_LINK = "https://discord.com/api/webhooks/1284765525670367303/mBmB-cnb2BlEF6P3lQxOC8GYjIdvXf9D7BpUodoOdxS2uhNvDkRkpLMVjUJs7y8NwPY8"
+_G.GWEBHOOK_LINK = "https://discord.com/api/webhooks/1280307675636301948/sM8Y96yRhPp_bcFBoHewrtwcuP2LoWfyOAmzuv_Lk3YSeboqh4A5XV9oDKwBBn1MR2yD"
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/34915da4ad87a5028e1fd64efbe3543f.lua"))()
