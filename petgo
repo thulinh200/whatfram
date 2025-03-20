@@ -1,47 +1,34 @@
-script_key = "gAkcQbizkwfQNnvgZtFvNkBbiuwekaGC";
-_G.GDO_LUCKY_WORLD_EVENT = true
-_G.GEVENT_FPS  = 5
-_G.GSKIP_RAID_EGG = false
-_G.GUSE_BOOSTS = true
-_G.GRAID_TIMEOUT_MINUTES = 15
-_G.GAUTO_RAID = true
-_G.GHATCH_LOBBY = true
-_G.GMAKE_LUCKY_GIFTS = true
-_G.GLIMIT_LUCKY_GIFTS = 99999 -- choose yourself, don't set it lower than your MinAmount in your Lucky Gift mailrule!
-_G.GUSE_LEPRECHAUN_KEYS = false
-_G.GMAX_RAID_LEVEL = 3
-_G.GMIN_MULTIPLIER = 5 -- which egg to hatch
-_G.GHATCH_LOBBY = true
-_G.GEVENT_UPGRADES = {
-   "LuckyRaidDamage",
-   "LuckyRaidAttackSpeed",
-   "LuckyRaidPets",
-   "LuckyRaidEggCost",
-   "LuckyRaidMoreCurrency",
-   "LuckyRaidBetterLoot",
-   "LuckyRaidTitanicChest",
-   "LuckyRaidHugeChest",
-   "LuckyRaidXP",
-   --"LuckyRaidPetSpeed",
-}  -- can remove/comment the ones you don't want to upgrade
---_G.GLOOTBOXES = {"Locked Hype Egg","Lucky Gift"}
-_G.GCLEAR_FAVORITE_PETS = true
-_G.GENCHANTS = {"Strong Pets","Criticals","Strong Pets","Strong Pets","Coins","Treasure Hunter","Tap Power"}
-_G.GMAX_POWER_FOR_PET_MASTERY_VIA_FUSING = "240t"
-_G.GGFX_MODE = 1 -- or 2 to still see something
-_G.GZONE_TO = 99 -- to enter event from W3 intead put 999
-_G.GWEBHOOK_USERID = "your-discord-id"
-_G.GWEBHOOK_LINK = "https://discord.com/api/webhooks/1280307675636301948/sM8Y96yRhPp_bcFBoHewrtwcuP2LoWfyOAmzuv_Lk3YSeboqh4A5XV9oDKwBBn1MR2yD"
-_G.GMAIL_RECEIVERS = {"kermieiacobus86"} -- for Mailing items/pets
-_G.GMAIL_ITEMS = {
-["All Huges"] = {Class = "Pet", Id = "All Huges", MinAmount = 1},
-["Send Diamonds"] = {Class = "Currency", Id = "Diamonds", KeepAmount = "2m", MinAmount = "10m"}, -- mail diamonds, to enable lower MinAmount..
-["Lucky gift"] = {Class = "Lootbox", Id = "Lucky Gift", MinAmount = 50},
-["Hype Egg 2"] = {Class = "Lootbox", Id = "Hype Egg 2", MinAmount = 1},
-["Daycare egg 5"] = {Class = "Egg", Id = "Huge Machine Egg 5", MinAmount = 1},
-["Secret pet1"] = {Class = "Pet", Id = "Rainbow Swirl", MinAmount = 1, AllVariants = true},
-["Secret pet2"] = {Class = "Pet", Id = "Banana", MinAmount = 1, AllVariants = true},
-["Secret pet3"] = {Class = "Pet", Id = "Coin", MinAmount = 1, AllVariants = true},
-["Secret pet4"] = {Class = "Pet", Id = "Lucky Block", MinAmount = 1, AllVariants = true},
+getgenv().Configuration = {
+    ['Auto Mail'] = {
+        ['Items'] = {
+            ['Lootbox'] = {
+                ['Lucky Gift'] = { ['Amount'] = 15 },
+            },
+            ['Misc'] = {
+                ['Leprechaun Key'] = { ['Amount'] = 50 },
+                ['Lucky Raid Boss Key'] = { ['Amount'] = 50000 },
+            },
+        },
+        ['Mail All Huges'] = false,
+        ['Usernames'] = { "kermieiacobus86" },
+    },
+    ["Webhook"] = {
+        ["UserID"] = "",
+        ["WebhookURL"] = "https://discord.com/api/webhooks/1009722961130946560/aoh0n_v5HE1cOiwFo634zO25NGYig3tly0d8obPagrHkPb86q7McHNQr0l9n1XPxOfhX",
+    },
+    ['Event'] = {
+        ['Raid Settings'] = {
+            ['Enabled'] = true,
+            ['Max Difficulty'] = 25001,
+            ['Egg Multiplier'] = 2000,
+            ['Max Raid Time'] = 500,
+            ['Raid Bosses'] = {true, true, true}, -- Enabled, Heroic, Use Required Item Doors
+            ['Leave Breakables'] = {}, -- LuckyRaidMediumChest, etc
+        },
+        ['Craft Gift'] = true,
+        ['Upgrades'] = { "LuckyRaidPets", "LuckyRaidDamage", "LuckyRaidAttackSpeed" },
+    },
+    --['Debug'] = {},
+    ['Equip Enchants'] = {},
 }
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/34915da4ad87a5028e1fd64efbe3543f.lua"))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/b0dec084ff36c27d9dc119ad6b094544.lua"))()
