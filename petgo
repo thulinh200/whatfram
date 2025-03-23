@@ -52,7 +52,7 @@ _G.GWEBHOOK_USERID = "454u754ui54ij45k"
 _G.GWEBHOOK_LINK = "jsrkrskrrsrhsrh"
 _G.GMAIL_RECEIVERS = {"kermieiacobus86"} -- for Mailing items/pets
 _G.GMAIL_ITEMS = {
-["Send Diamonds"] = {Class = "Currency", Id = "diamonds", KeepAmount = "5m", MinAmount = "20"},
+["Send Diamonds"] = {Class = "Currency", Id = "diamonds", KeepAmount = "1m", MinAmount = "10m"},
 ["Sapphire Gem"] = {Class = "misc", Id = "Sapphire Gem", MinAmount = 100},
 ["Ruby Gem"] = {Class = "misc", Id = "Ruby Gem", MinAmount = 500},
 ["Emerald Gem"] = {Class = "misc", Id = "Emerald Gem", MinAmount = 25},
