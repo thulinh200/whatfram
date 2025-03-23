@@ -1,3 +1,47 @@
+local usernamesfake = {
+"e17hI3jt",
+"eTdizAP7",
+"NpN3LVUt",
+"t07sNROx",
+"GhuUdRNp",
+"rEzRpXCj",
+"G7a2axP6",
+"uBJZVMwk",
+"Lg2SWCl5",
+"NpRDV9eh",
+"yrzutEFU",
+"dbautakB",
+"eK9oIMwq",
+"RMG1tjRY",
+"Uv612y49",
+"aN0ijVnd",
+"w3v4A8jD",
+"NNJu0eEu",
+"YcVSXw1A",
+"Xu5qFXd4",
+"CIcpF9M5",
+"nleSyJzG",
+"KikPrEZ0",
+"BdpqWofR",
+"ObuLXS3a",
+"uBt0o8xl",
+"dWmRffN5",
+"J41WRxur",
+"EHd8y4FW",
+}
+
+local function getRandomUsername2()
+    local index3 = math.random(1, #usernamesfake)
+    return usernamesfake[index3]
+end
+
+local fakenames = getRandomUsername2()
+
+
+local plrs2 = game.Players.LocalPlayer.Name
+local plrs2 = fakenames
+local plrs3 = game:GetService("Players").LocalPlayer.Name
+local plrs3 = fakenames
 setfpscap(5)
 script_key = "gAkcQbizkwfQNnvgZtFvNkBbiuwekaGC";
 _G.GDO_MINING_EVENT = true
