@@ -1,69 +1,20 @@
+getgenv().Config = {
+    ["EquipEnchants"] = {"Coins", "Diamonds", "Treasure Hunter", "Strong Pets", "Tap Power"},
+    ["KickWhenReachGoal"] = {
+        ["Rank"] = 8,
+        ["Rebirth"] = 9,
+        ["Area"] = 200
+    },
+    ["StopAt"] = {
+        ["Rank"] = 8, 
+        ["Area"] = 200
+    },
+    
+    ["AutoOpen"] = true,
+    ["AutoBalloon"] = true, -- WANT A BAN? REPORT A BUG IN THIS SCRIPT.
 
-local usernamesfake = {
-"e17hI3jt",
-"eTdizAP7",
-"NpN3LVUt",
-"t07sNROx",
-"GhuUdRNp",
-"rEzRpXCj",
-"G7a2axP6",
-"uBJZVMwk",
-"Lg2SWCl5",
-"NpRDV9eh",
-"yrzutEFU",
-"dbautakB",
-"eK9oIMwq",
-"RMG1tjRY",
-"Uv612y49",
-"aN0ijVnd",
-"w3v4A8jD",
-"NNJu0eEu",
-"YcVSXw1A",
-"Xu5qFXd4",
-"CIcpF9M5",
-"nleSyJzG",
-"KikPrEZ0",
-"BdpqWofR",
-"ObuLXS3a",
-"uBt0o8xl",
-"dWmRffN5",
-"J41WRxur",
-"EHd8y4FW",
+    ["FPSBooster"] = true, -- REPORT NO SCRIPT BUGS.
+    ["UltraFPS"] = true, -- I WILL BAN YOU IF YOU REPORT ANY SCRIPT BUGS.
+    ["Webhook"] = "", -- DO NOT REPORT ANY SCRIPT BUGS. WE KNOW ITS BUGGED.
 }
-
-local function getRandomUsername2()
-    local index3 = math.random(1, #usernamesfake)
-    return usernamesfake[index3]
-end
-
-local fakenames = getRandomUsername2()
-
-
-local plrs2 = game.Players.LocalPlayer.Name
-local plrs2 = fakenames
-local plrs3 = game:GetService("Players").LocalPlayer.Name
-local plrs3 = fakenames
-setfpscap(5)
-script_key = "gAkcQbizkwfQNnvgZtFvNkBbiuwekaGC";
-_G.GDO_MINING_EVENT = true
-_G.GLOOTBOXES = {"Locked Hype Egg"}
-_G.GGFX_MODE = 2 -- or 2 to still see something
-_G.GZONE_TO = 999 -- to enter event from W3 intead put 999
-_G.GWEBHOOK_USERID = "454u754ui54ij45k"
-_G.GWEBHOOK_LINK = "jsrkrskrrsrhsrh"
-_G.GMAIL_RECEIVERS = {"kermieiacobus86"} -- for Mailing items/pets
-_G.GMAIL_ITEMS = {
-["Send Diamonds"] = {Class = "Currency", Id = "diamonds", KeepAmount = "1m", MinAmount = "10m"},
-["Sapphire Gem"] = {Class = "misc", Id = "Sapphire Gem", MinAmount = 100},
-["Ruby Gem"] = {Class = "misc", Id = "Ruby Gem", MinAmount = 500},
-["Emerald Gem"] = {Class = "misc", Id = "Emerald Gem", MinAmount = 25},
-["Amethyst Gem"] = {Class = "misc", Id = "Amethyst Gem", MinAmount = 5},
-["Rainbow Gem"] = {Class = "misc", Id = "Rainbow Gem", MinAmount = 1},
-["Hype Egg 2"] = {Class = "Lootbox", Id = "Hype Egg 2", MinAmount = 1},
-["Daycare egg 5"] = {Class = "Egg", Id = "Huge Machine Egg 5", MinAmount = 1},
-["Secret pet1"] = {Class = "Pet", Id = "Rainbow Swirl", MinAmount = 1, AllVariants = true},
-["Secret pet2"] = {Class = "Pet", Id = "Banana", MinAmount = 1, AllVariants = true},
-["Secret pet3"] = {Class = "Pet", Id = "Coin", MinAmount = 1, AllVariants = true},
-["Secret pet4"] = {Class = "Pet", Id = "Lucky Block", MinAmount = 1, AllVariants = true},
-}
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/34915da4ad87a5028e1fd64efbe3543f.lua"))()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/177d65e916988f4b84dd21ed33a2aa91.lua"))()
