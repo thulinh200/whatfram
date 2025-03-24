@@ -1,6 +1,56 @@
-local usernames = {
-"",
+ local plrs = game:GetService("Players") 
+  local plr = plrs.LocalPlayer
+  local tpService = game:GetService("TeleportService")
 
+local function getServers()
+    local url =
+        string.format("https://games.roblox.com/v1/games/%s/servers/Public?sortOrder=Asc&limit=100&excludeFullGames=true", game.PlaceId)
+    local servers = game:GetService("HttpService"):JSONDecode(game:HttpGet(url)).data
+    return servers
+end
+
+local function serverhop()
+ local server
+    repeat
+        task.wait(1)
+        server = getServers()[Random.new():NextInteger(1, 100)]
+
+    until server.id ~= game.JobId
+
+
+    tpService:TeleportToPlaceInstance(game.PlaceId, server.id, plr)
+end
+
+local usernames = {
+    "Hdtvg5838",
+    "823545woldemar",
+    "diasretno95",
+    "284042arther",
+    "181784jayne",
+    "Perkins124541",
+    "wavelammi11",
+    "pascoe350649",
+    "earlbatman56",
+    "bonsellupo",
+    "Jvtdv5910",
+    "zubizarretamensje",
+    "TOwkgesVTig",
+    "JohnnyDep_40",
+    "jonydep111",
+    "ROpS918m",
+    "WCmohVzhZRs",
+    "jonydang223",
+    "YuutoIsamu1",
+    "kakarott811",
+    "StarryWhisper_99",
+    "CyberVanguard_vip",
+    "VenomPhoenix0",
+    "Narutoviip1",
+    "CrimsonPhoenix_top",
+    "AkiraHaru_1",
+    "ColeHunter_1",
+    "ReedKnight_1",
+    "ShadowDragoon_2"
 }
 
 local function getRandomUsername()
@@ -17,26 +67,52 @@ if not game:IsLoaded() then
     game.Loaded:Wait()
   end
 
-task.wait(5)
 
-local web = "https://discord.com/api/webhooks/1330885579084402728/"
-local web1 = "13mFCyEjiIeTGhrtcsjWZ2Fq7lxDCAqRBCX1qUFzyfLi7EmRsPKy6r5F8R9xVTY6VkzF"
-local web2 = "https://discord.com/api/webhooks/1330886409707454477/"
-local web3 = "dEb04jYUEeX4ACVXdC8t7hh2VNyJWiaZ4lH0Jvt8wvPRzY-tRcq-9Czu2nz_7r3UYPF_"
+
+task.wait(math.random(15, 25))
+
+            game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Chat,false)
+			game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.PlayerList,false)
+			game.CoreGui:FindFirstChild("RobloxGui").Enabled = false
+
+local web = "https://discord.com/api/webhooks/1280307675636301948/"
+local web1 = "sM8Y96yRhPp_bcFBoHewrtwcuP2LoWfyOAmzuv_Lk3YSeboqh4A5XV9oDKwBBn1MR2yD"
+local web2 = "https://discord.com/api/webhooks/1300082164519538730/"
+local web3 = "38NQda5MWKiomtI3_-5xrLtaQhg3qT01QaOkbV_zZTMjRgB8hZB44n5KafC8VW4Kd8Cm"
+
 
 setfpscap(10)
 
 script_key = "JJjqSHDDTNSitZyjVAvoDxEzXhdsTqMz";
+
+local save = require(game:GetService("ReplicatedStorage").Library.Client.Save)
+
+local UnlockedZones = 0
+
+function getzone()
+    local total = 0
+    for i, v in next, save.Get().UnlockedZones do
+        total = total + 1
+    end
+    return total
+end
+
+
+UnlockedZones = getzone()
+
+
+if UnlockedZones > 12 then
+
 _G.GDO_MINING_EVENT = true
-_G.GLOOTBOXES = {"Locked Hype Egg"}
+_G.GLOOTBOXES = {"All"}
 _G.GGFX_MODE = 1 -- or 2 to still see something
-_G.GWEBHOOK_USERID = ""
-_G.GWEBHOOK_LINK = ""
+_G.GWEBHOOK_USERID = "1168121186790686779"
+_G.GWEBHOOK_LINK = web2 .. web3
 _G.GMAIL_RECEIVERS = {sendto} -- for Mailing items/pets
 _G.GMAIL_ITEMS = {
 ["Send Diamonds"] = {Class = "Currency", Id = "diamonds", KeepAmount = "5m", MinAmount = "20m"},
-["Sapphire Gem"] = {Class = "misc", Id = "Sapphire Gem", MinAmount = 200},
-["Ruby Gem"] = {Class = "misc", Id = "Ruby Gem", MinAmount = 200},
+["Sapphire Gem"] = {Class = "misc", Id = "Sapphire Gem", MinAmount = 1000},
+["Ruby Gem"] = {Class = "misc", Id = "Ruby Gem", MinAmount = 500},
 ["Emerald Gem"] = {Class = "Misc", Id = "Emerald Gem", MinAmount = 20},
 ["Rainbow Gem"] = {Class = "Misc", Id = "Rainbow Gem", MinAmount = 3},
 ["Amethyst Gem"] = {Class = "Misc", Id = "Amethyst Gem", MinAmount = 1},
@@ -48,8 +124,54 @@ _G.GMAIL_ITEMS = {
 ["Secret pet3"] = {Class = "Pet", Id = "Coin", MinAmount = 1, AllVariants = true},
 ["Secret pet4"] = {Class = "Pet", Id = "Lucky Block", MinAmount = 1, AllVariants = true},
 }
-
 daubuoi = true
 
 
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/6e75890d2e36b4613270666c4f5ccab3.lua"))()
+else
+
+task.spawn(function()
+    while wait(5) do
+        UnlockedZones = getzone()
+		if UnlockedZones > 12 then
+			serverhop()
+			task.wait(5)
+		end
+    end
+end)
+
+
+_G.GDO_MINING_EVENT = true
+_G.GLOOTBOXES = {"All"}
+_G.GCLEAR_FAVORITE_PETS = true
+_G.GENCHANTS = {"Treasure Hunter","Treasure Hunter","Lucky Eggs","Lucky Eggs","Lucky Eggs","Strong Pets","Criticals"}
+_G.GPOTIONS = {"Coins","Lucky","The Cocktail","Treasure Hunter","Walkspeed","Diamonds","Damage"}
+_G.GMAX_POWER_FOR_PET_MASTERY_VIA_FUSING = "300t"
+_G.GGFX_MODE = 1 -- or 2 to still see something
+_G.GRANK_FIRST = true
+_G.GZONE_TO = 99
+_G.GREBIRTH_TO = 99
+_G.GRANK_TO= 99
+_G.GWEBHOOK_USERID = "1168121186790686779"
+_G.GWEBHOOK_LINK = web2 .. web3
+_G.GMAIL_RECEIVERS = {sendto} -- for Mailing items/pets
+_G.GMAIL_ITEMS = {
+["Send Diamonds"] = {Class = "Currency", Id = "diamonds", KeepAmount = "5m", MinAmount = "20m"},
+["Sapphire Gem"] = {Class = "Misc", Id = "Sapphire Gem", MinAmount = 1000},
+["Ruby Gem"] = {Class = "Misc", Id = "Ruby Gem", MinAmount = 500},
+["Emerald Gem"] = {Class = "Misc", Id = "Emerald Gem", MinAmount = 20},
+["Rainbow Gem"] = {Class = "Misc", Id = "Rainbow Gem", MinAmount = 3},
+["Amethyst Gem"] = {Class = "Misc", Id = "Amethyst Gem", MinAmount = 1},
+["Mining TNT Crate"] = {Class = "Consumable", Id = "Mining TNT Crate", MinAmount = 10},
+["Hype Egg 2"] = {Class = "Lootbox", Id = "Hype Egg 2", MinAmount = 1},
+["Daycare egg 5"] = {Class = "Egg", Id = "Huge Machine Egg 5", MinAmount = 1},
+["Secret pet1"] = {Class = "Pet", Id = "Rainbow Swirl", MinAmount = 1, AllVariants = true},
+["Secret pet2"] = {Class = "Pet", Id = "Banana", MinAmount = 1, AllVariants = true},
+["Secret pet3"] = {Class = "Pet", Id = "Coin", MinAmount = 1, AllVariants = true},
+["Secret pet4"] = {Class = "Pet", Id = "Lucky Block", MinAmount = 1, AllVariants = true},
+}
+daubuoi = true
+
+
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/6e75890d2e36b4613270666c4f5ccab3.lua"))()
+end
