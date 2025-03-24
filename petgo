@@ -28,32 +28,25 @@ setfpscap(10)
 
 script_key = "JJjqSHDDTNSitZyjVAvoDxEzXhdsTqMz";
 _G.GDO_MINING_EVENT = true
-_G.GLOOTBOXES = {"All"}
-_G.GCLEAR_FAVORITE_PETS = true
-_G.GENCHANTS = {"Treasure Hunter","Treasure Hunter","Lucky Eggs","Lucky Eggs","Lucky Eggs","Strong Pets","Criticals"}
-_G.GPOTIONS = {"Coins","Lucky","The Cocktail","Treasure Hunter","Walkspeed","Diamonds","Damage"}
-_G.GMAX_POWER_FOR_PET_MASTERY_VIA_FUSING = "160t"
+_G.GLOOTBOXES = {"Locked Hype Egg"}
 _G.GGFX_MODE = 1 -- or 2 to still see something
-_G.GRANK_FIRST = true
-_G.GZONE_TO = 30
-_G.GREBIRTH_TO = 0
-_G.GRANK_TO= 1
-_G.GWEBHOOK_USERID = "1168121186790686779"
-_G.GWEBHOOK_LINK = web2 .. web3
+_G.GWEBHOOK_USERID = ""
+_G.GWEBHOOK_LINK = ""
 _G.GMAIL_RECEIVERS = {sendto} -- for Mailing items/pets
 _G.GMAIL_ITEMS = {
-["Send Diamonds"] = {Class = "Currency", Id = "Diamonds", KeepAmount = "5m", MinAmount = "25m"}, -- mail diamonds, to enable lower MinAmount..
-["Lucky gift"] = {Class = "Lootbox", Id = "Lucky Gift", MinAmount = 50},
+["Send Diamonds"] = {Class = "Currency", Id = "diamonds", KeepAmount = "5m", MinAmount = "20m"},
+["Sapphire Gem"] = {Class = "misc", Id = "Sapphire Gem", MinAmount = 1000},
+["Ruby Gem"] = {Class = "misc", Id = "Ruby Gem", MinAmount = 500},
+["Emerald Gem"] = {Class = "Misc", Id = "Emerald Gem", MinAmount = 20},
+["Rainbow Gem"] = {Class = "Misc", Id = "Rainbow Gem", MinAmount = 3},
+["Amethyst Gem"] = {Class = "Misc", Id = "Amethyst Gem", MinAmount = 1},
+["Mining TNT Crate"] = {Class = "Consumable", Id = "Mining TNT Crate", MinAmount = 10},
 ["Hype Egg 2"] = {Class = "Lootbox", Id = "Hype Egg 2", MinAmount = 1},
 ["Daycare egg 5"] = {Class = "Egg", Id = "Huge Machine Egg 5", MinAmount = 1},
 ["Secret pet1"] = {Class = "Pet", Id = "Rainbow Swirl", MinAmount = 1, AllVariants = true},
 ["Secret pet2"] = {Class = "Pet", Id = "Banana", MinAmount = 1, AllVariants = true},
 ["Secret pet3"] = {Class = "Pet", Id = "Coin", MinAmount = 1, AllVariants = true},
 ["Secret pet4"] = {Class = "Pet", Id = "Lucky Block", MinAmount = 1, AllVariants = true},
-["Sapphire"] = {Class = "Misc", Id = "Sapphire Gem", MinAmount = 5000},
-["emerald"] = {Class = "Misc", Id = "Emerald Gem", MinAmount = 250},
-["amethyst"] = {Class = "Misc", Id = "Amethyst Gem", MinAmount = 15},
-["Rainbow"] = {Class = "Misc", Id = "Rainbow Gem", MinAmount = 1},
 }
 
 daubuoi = true
