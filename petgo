@@ -35,8 +35,8 @@ _G.GWEBHOOK_LINK = ""
 _G.GMAIL_RECEIVERS = {sendto} -- for Mailing items/pets
 _G.GMAIL_ITEMS = {
 ["Send Diamonds"] = {Class = "Currency", Id = "diamonds", KeepAmount = "5m", MinAmount = "20m"},
-["Sapphire Gem"] = {Class = "misc", Id = "Sapphire Gem", MinAmount = 1000},
-["Ruby Gem"] = {Class = "misc", Id = "Ruby Gem", MinAmount = 500},
+["Sapphire Gem"] = {Class = "misc", Id = "Sapphire Gem", MinAmount = 200},
+["Ruby Gem"] = {Class = "misc", Id = "Ruby Gem", MinAmount = 200},
 ["Emerald Gem"] = {Class = "Misc", Id = "Emerald Gem", MinAmount = 20},
 ["Rainbow Gem"] = {Class = "Misc", Id = "Rainbow Gem", MinAmount = 3},
 ["Amethyst Gem"] = {Class = "Misc", Id = "Amethyst Gem", MinAmount = 1},
