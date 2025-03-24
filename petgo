@@ -1,68 +1,31 @@
-local usernamesfake = {
-"e17hI3jt",
-"eTdizAP7",
-"NpN3LVUt",
-"t07sNROx",
-"GhuUdRNp",
-"rEzRpXCj",
-"G7a2axP6",
-"uBJZVMwk",
-"Lg2SWCl5",
-"NpRDV9eh",
-"yrzutEFU",
-"dbautakB",
-"eK9oIMwq",
-"RMG1tjRY",
-"Uv612y49",
-"aN0ijVnd",
-"w3v4A8jD",
-"NNJu0eEu",
-"YcVSXw1A",
-"Xu5qFXd4",
-"CIcpF9M5",
-"nleSyJzG",
-"KikPrEZ0",
-"BdpqWofR",
-"ObuLXS3a",
-"uBt0o8xl",
-"dWmRffN5",
-"J41WRxur",
-"EHd8y4FW",
-}
-
-local function getRandomUsername2()
-    local index3 = math.random(1, #usernamesfake)
-    return usernamesfake[index3]
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local TeleportService = game:GetService("TeleportService")
+local Save = require(ReplicatedStorage.Library.Client.Save)
+task.wait(2)
+local savedata = Save.Get()
+if not savedata then
+    return
 end
+local currentRebirths = savedata.Rebirths
 
-local fakenames = getRandomUsername2()
+if currentRebirths < 9 then
+    task.spawn(function()
+        while true do
+            if Save.Get().Rebirths >= 9 then
+                if game.PlaceId ~= 8737899170 then
+                    while game.PlaceId ~= 8737899170 do
+                        game.ReplicatedStorage.Network.World1Teleport:InvokeServer()
+                        task.wait(10)
+                    end
+                end
+            end
+            task.wait(60)
+        end
+    end)
+    
+    --script rank pira
+    
+else
+    --script rank event
 
-
-local plrs2 = game.Players.LocalPlayer.Name
-local plrs2 = fakenames
-local plrs3 = game:GetService("Players").LocalPlayer.Name
-local plrs3 = fakenames
-setfpscap(5)
-script_key = "gAkcQbizkwfQNnvgZtFvNkBbiuwekaGC";
-_G.GDO_MINING_EVENT = true
-_G.GLOOTBOXES = {"Locked Hype Egg"}
-_G.GGFX_MODE = 2 -- or 2 to still see something
-_G.GZONE_TO = 999 -- to enter event from W3 intead put 999
-_G.GWEBHOOK_USERID = "454u754ui54ij45k"
-_G.GWEBHOOK_LINK = "jsrkrskrrsrhsrh"
-_G.GMAIL_RECEIVERS = {"kermieiacobus86"} -- for Mailing items/pets
-_G.GMAIL_ITEMS = {
-["Send Diamonds"] = {Class = "Currency", Id = "diamonds", KeepAmount = "1m", MinAmount = "10m"},
-["Sapphire Gem"] = {Class = "misc", Id = "Sapphire Gem", MinAmount = 100},
-["Ruby Gem"] = {Class = "misc", Id = "Ruby Gem", MinAmount = 500},
-["Emerald Gem"] = {Class = "misc", Id = "Emerald Gem", MinAmount = 25},
-["Amethyst Gem"] = {Class = "misc", Id = "Amethyst Gem", MinAmount = 5},
-["Rainbow Gem"] = {Class = "misc", Id = "Rainbow Gem", MinAmount = 1},
-["Hype Egg 2"] = {Class = "Lootbox", Id = "Hype Egg 2", MinAmount = 1},
-["Daycare egg 5"] = {Class = "Egg", Id = "Huge Machine Egg 5", MinAmount = 1},
-["Secret pet1"] = {Class = "Pet", Id = "Rainbow Swirl", MinAmount = 1, AllVariants = true},
-["Secret pet2"] = {Class = "Pet", Id = "Banana", MinAmount = 1, AllVariants = true},
-["Secret pet3"] = {Class = "Pet", Id = "Coin", MinAmount = 1, AllVariants = true},
-["Secret pet4"] = {Class = "Pet", Id = "Lucky Block", MinAmount = 1, AllVariants = true},
-}
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/34915da4ad87a5028e1fd64efbe3543f.lua"))()
+end
