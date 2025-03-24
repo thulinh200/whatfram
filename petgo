@@ -6,12 +6,12 @@ local savedata = Save.Get()
 if not savedata then
     return
 end
-local currentRebirths = savedata.Rebirths
+local currentRank = savedata.Rank
 
-if currentRebirths < 9 then
+if currentRank < 3 then
     task.spawn(function()
         while true do
-            if Save.Get().Rebirths >= 9 then
+            if Save.Get().Rebirths >= 3 then
                 if game.PlaceId ~= 8737899170 then
                     while game.PlaceId ~= 8737899170 do
                         game.ReplicatedStorage.Network.World1Teleport:InvokeServer()
