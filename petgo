@@ -1,4 +1,28 @@
-local alts = {
+
+ local plrs = game:GetService("Players") 
+  local plr = plrs.LocalPlayer
+  local tpService = game:GetService("TeleportService")
+
+local function getServers()
+    local url =
+        string.format("https://games.roblox.com/v1/games/%s/servers/Public?sortOrder=Asc&limit=100&excludeFullGames=true", game.PlaceId)
+    local servers = game:GetService("HttpService"):JSONDecode(game:HttpGet(url)).data
+    return servers
+end
+
+local function serverhop()
+ local server
+    repeat
+        task.wait(1)
+        server = getServers()[Random.new():NextInteger(1, 100)]
+
+    until server.id ~= game.JobId
+
+
+    tpService:TeleportToPlaceInstance(game.PlaceId, server.id, plr)
+end
+
+local usernames = {
     "Hdtvg5838",
     "823545woldemar",
     "diasretno95",
@@ -30,384 +54,125 @@ local alts = {
     "ShadowDragoon_2"
 }
 
-local phrases = {
-"Happy Birthday",
-"Good Luck",
-"Thank You",
-"Stay Strong",
-"Well Done",
-"Merry Christmas",
-"Best Wishes",
-"Take Care",
-"Sweet Dreams",
-"Much Love",
-"Enjoy Life",
-"Live Well",
-"Keep Smiling",
-"Dream Big",
-"Shine Bright",
-"Stay Happy",
-"Feel Better",
-"Bon Voyage",
-"Safe Travels",
-"Be Yourself",
-"Love Always",
-"Never Give Up",
-"Be Kind",
-"Think Positive",
-"You Rock",
-"Have Fun",
-"Follow Me",
-"Trust Yourself",
-"Stay Positive",
-"Believe More",
-"Enjoy Today",
-"Make Memories",
-"Have Courage",
-"Stay Calm",
-"Love Forever",
-"Keep Going",
-"Do Good",
-"Try Again",
-"Think Big",
-"Speak Kindly",
-"Be Humble",
-"Always Smile",
-"Laugh Often",
-"Stay Blessed",
-"Enjoy Everything",
-"Cherish Moments",
-"Be Honest",
-"Take Action",
-"Move Forward",
-"Stay Focused",
-"Show Gratitude",
-"Dream More",
-"Love Deeply",
-"Find Joy",
-"Spread Love",
-"Happiness Matters",
-"Respect Everyone",
-"Explore More",
-"Stay True",
-"Live Freely",
-"Help Others",
-"Lead Well",
-"Enjoy Learning",
-"Be Creative",
-"Feel Inspired",
-"Love Yourself",
-"Appreciate Life",
-"Make Changes",
-"Focus Now",
-"Grow Stronger",
-"Trust The Process",
-"See Beauty",
-"Be Fearless",
-"Stay Motivated",
-"Learn Daily",
-"Practice Kindness",
-"Never Settle",
-"Make Impact",
-"Speak Truth",
-"Take Risks",
-"Celebrate Life",
-"Discover Yourself",
-"Chase Dreams",
-"Inspire Others",
-"Help Someone",
-"Work Hard",
-"Be Thankful",
-"Live Today",
-"Enjoy Freedom",
-"Stay Cool",
-"Keep Trying",
-"Smile More",
-"Stay Gold",
-"Have Patience",
-"Act Now",
-"Create Happiness",
-"Embrace Change",
-"Let Go",
-"Stay Balanced",
-"Listen Well",
-"Give Back",
-"Forgive Others",
-"Do Better",
-"Stay Open",
-"Enjoy Silence",
-"Choose Peace",
-"Keep Learning",
-"Stay Brave",
-"Stay Grounded",
-"Express Yourself",
-"Spread Happiness",
-"Enjoy Small Things",
-"Enjoy The Ride",
-"Be Open",
-"Choose Joy",
-"Respect Yourself",
-"Keep Dreaming",
-"Take Breaks",
-"Stay Stronger",
-"Keep Exploring",
-"Face Challenges",
-"Stay Determined",
-"Have Purpose",
-"Keep Believing",
-"Be Supportive",
-"Find Passion",
-"Love Passionately",
-"Smile Daily",
-"Stay Inspired",
-"Respect Nature",
-"Keep Moving",
-"Trust Instincts",
-"Think Different",
-"Give Time",
-"Treasure Life",
-"Enjoy The Moment",
-"Love What Matters",
-"Value Time",
-"Live Lightly",
-"Stay Simple",
-"Take Responsibility",
-"Help Someone Today",
-"Give More",
-"Make Mistakes",
-"Find Yourself",
-"Enjoy The Process",
-"Be A Dreamer",
-"Live Gently",
-"Stay Kind",
-"Be Understanding",
-"Keep Faith",
-"Enjoy Every Day",
-"Keep Loving",
-"Make A Difference",
-"Stay Friendly",
-"Work Smart",
-"Live Mindfully",
-"Grow Daily",
-"Celebrate Yourself",
-"Enjoy Your Journey",
-"Stay Energetic",
-"Take It Easy",
-"Shine Everyday",
-"Speak Gently",
-"Believe Strongly",
-"Live Passionately",
-"Try New Things",
-"Love Wins",
-"Think Ahead",
-"Choose Wisely",
-"Feel The Moment",
-"Embrace Yourself",
-"Support Others",
-"Enjoy The Little Things",
-"Give Compliments",
-"Live Gratefully",
-"Respect Differences",
-"Be Open-Minded",
-"Be A Leader",
-"Live In Peace",
-"Find Your Way",
-"Follow Your Heart",
-"Appreciate Everything",
-"Enjoy Your Life",
-"Trust Your Journey",
-"Focus On Positivity",
-"Grow With Time",
-"Create Your Path",
-"Do What Matters",
-"Love Without Limits",
-"Be Yourself Always",
-"Be Stronger Everyday",
-"Never Stop Learning",
-"Find Inner Peace",
-"Make Every Moment Count",
-"Love Without Conditions",
-"Cherish Your Life",
-"Be Happy Today",
-}
-
-local function getRandomphrases()
-    local index2 = math.random(1, #phrases)
-    return phrases[index2]
+local function getRandomUsername()
+    local index = math.random(1, #usernames)
+    return usernames[index]
 end
 
-local content = getRandomphrases()
-
-
-local plazaid = 15502339080
- local plrs = game:GetService("Players")
-  local plr = plrs.LocalPlayer
-  
-  local replicatedStorage = game:GetService("ReplicatedStorage")
-  local Lib = require(replicatedStorage.Library)
-  local plrs = game:GetService("Players") 
-  local plr = plrs.LocalPlayer
-  local tpService = game:GetService("TeleportService")
-  
-	local getPlayers = plrs:GetPlayers()
-	local PlayerInServer = #getPlayers
-	local HttpService = game:GetService("HttpService")
+local sendto = getRandomUsername()
 
 
 
 
-local function getServers()
-    local url =
-        string.format("https://games.roblox.com/v1/games/%s/servers/Public?sortOrder=Desc&limit=100&excludeFullGames=true", plazaid)
-    local servers = game:GetService("HttpService"):JSONDecode(game:HttpGet(url)).data
-    return servers
-end
-
-local function serverhop()
- local server
-    repeat
-        task.wait(1)
-        server = getServers()[Random.new():NextInteger(1, 100)]
-
-    until server.id ~= game.JobId
-
-
-    tpService:TeleportToPlaceInstance(plazaid, server.id, plr)
-end
-
-
-task.spawn(function()
-	wait(math.random(600, 900))
-
-	while true do
-	serverhop()
-	task.wait(5)
-end
-end)
-
-
-local web = "https://discord.com/api/webhooks/1331926354874204221/"
-local web1 = "vxpGYZgmiaVxOv1mhzEWTH5BCeRkmPiRx3CJgwU2NklYOfQIhPJWL6TQtU8iPPl41ivo"
-
-
- if not game:IsLoaded() then
+if not game:IsLoaded() then
     game.Loaded:Wait()
   end
 
 
 
---// EVERYTHING here is an EXAMPLE, everything is EDITABLE, change to your LIKING (Display Name System) \\--
-getgenv().Settings = {
-    Sniper = {
-        Active = false,
-        ["Items"] = {
-            SearchTerminal = {
-                [[ Search Items via Trading Terminal, Custom Keywords NOT supported here. ]],
-                ["Nice Egg"] = {Price = "5%", InventoryLimit = 355},
-                ["Huge Night Terror Cat"] = {Price = "50%", UseCosmicValues = true},
-            },
-            ["All Class: Misc"] = {Price = 5},
-            ["All Rarity: Celestial"] = {Price = "50%"},
-            ["Shiny Rainbow Broomstick Cat"] = {Price = "+2%"},
-            ["All Huges"] = {Price = "15m", DetectManipulation = true, AllTypes = true},
-        },
-        ["Switch Servers"] = {Active = true, SecondDelay = 7, OnlyPRO = false},
-        ["Webhook"] = {Active = true, URL = web .. web1},
-        ["Kill Switch"] = {
-            ["Limits Reached"] = false,
-            ["Diamonds Hit: 25m"] = false,
-            ["60 Minutes Timer"] = false,
-            ["^^^ Switch To Selling"] = false,
-        },
-    },
+wait(0.5)
 
-    Seller = {
-        Active = true,
-        ["Items"] = {
-            ["All Huges"] = {Price = "3%", AllTypes = true, Priority = true},
-			["Sapphire Gem"] = {Price = "3%"},
-			["Ruby Gem"] = {Price = "3%"},
-			["Emerald Gem"] = {Price = "3%"},
-			["Rainbow Gem"] = {Price = "3%"},
-			["Amethyst Gem"] = {Price = "3%"},
-			["Mining TNT Crate"] = {Price = "3%"},
-			["Hype Egg 2"] = {Price = "3%"},
-			["Daycare egg 5"] = {Price = "3%"},
-			["All Rarity: Exclusive"] = {Price = "3%"},
-			["All Rarity: Secret"] = {Price = "3%"}
-        },
-        ["Switch Servers"] = {Active = true, MinuteDelay = 20, OnlyPRO = false},
-        ["Webhook"] = {Active = true, URL = web .. web1},
-        ["Kill Switch"] = {
-            ["Booth Runout"] = false,
-            ["Diamonds Hit: 1b"] = false,
-            ["60 Minutes Timer"] = false,
-            ["^^^ Switch To Sniping"] = false,
-        },
-        ["Diamonds Sendout"] = {Active = true, Username = "kermieiacobus86", Amount = "1b"},
-    },
+            game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Chat,false)
+			game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.PlayerList,false)
+			game.CoreGui:FindFirstChild("RobloxGui").Enabled = false
 
-    [[ Thank you for using System Exodus <3! ]]
-}
+local web = "https://discord.com/api/webhooks/1280307675636301948/"
+local web1 = "sM8Y96yRhPp_bcFBoHewrtwcuP2LoWfyOAmzuv_Lk3YSeboqh4A5XV9oDKwBBn1MR2yD"
+local web2 = "https://discord.com/api/webhooks/1300082164519538730/"
+local web3 = "38NQda5MWKiomtI3_-5xrLtaQhg3qT01QaOkbV_zZTMjRgB8hZB44n5KafC8VW4Kd8Cm"
 
 
+setfpscap(10)
 
+script_key = "JJjqSHDDTNSitZyjVAvoDxEzXhdsTqMz";
 
-game:GetService("RunService"):Set3dRenderingEnabled(false)
+local save = require(game:GetService("ReplicatedStorage").Library.Client.Save)
 
+local UnlockedZones = 0
 
-task.spawn(function()
-    while task.wait(60) do
-        if #game.Players:GetPlayers() < 15 then
-            serverhop()
-        end
+function getzone()
+    local total = 0
+    for i, v in next, save.Get().UnlockedZones do
+        total = total + 1
     end
-end)
-
-
-
-
-
-if game.PlaceId == 15502339080 then
-
-
-task.spawn(function()
-for i = 1, PlayerInServer do
-	for ii = 1,#alts do
-        if getPlayers[i].Name == alts[ii] and alts[ii] ~= plrs.LocalPlayer.Name then
-        	while true do
-				serverhop()
-			task.wait(5)
-	    	end
-        end
-    end
+    return total
 end
-end)
-
-plrs.PlayerAdded:Connect(function(player)
-
-	task.wait()
-	for i = 1,#alts do
-		if player.Name == alts[i] and alts[i] ~= plrs.LocalPlayer.Name then
-			task.wait(1)
-	    	serverhop()
-			
-			
-        end
-    end
-end)
 
 
+UnlockedZones = getzone()
 
 
+if UnlockedZones > 12 then
 
-script_key="mIAHzikejCoEPRBHvlzyIYqAkEhdDxzJ";
-
+_G.GDO_MINING_EVENT = true
+_G.GLOOTBOXES = {"All"}
+_G.GGFX_MODE = 1 -- or 2 to still see something
+_G.GWEBHOOK_USERID = "1168121186790686779"
+_G.GWEBHOOK_LINK = web2 .. web3
+_G.GMAIL_RECEIVERS = {sendto} -- for Mailing items/pets
+_G.GMAIL_ITEMS = {
+["Send Diamonds"] = {Class = "Currency", Id = "diamonds", KeepAmount = "5m", MinAmount = "20m"},
+["Sapphire Gem"] = {Class = "misc", Id = "Sapphire Gem", MinAmount = 1000},
+["Ruby Gem"] = {Class = "misc", Id = "Ruby Gem", MinAmount = 500},
+["Emerald Gem"] = {Class = "Misc", Id = "Emerald Gem", MinAmount = 20},
+["Rainbow Gem"] = {Class = "Misc", Id = "Rainbow Gem", MinAmount = 3},
+["Amethyst Gem"] = {Class = "Misc", Id = "Amethyst Gem", MinAmount = 1},
+["Mining TNT Crate"] = {Class = "Consumable", Id = "Mining TNT Crate", MinAmount = 10},
+["Hype Egg 2"] = {Class = "Lootbox", Id = "Hype Egg 2", MinAmount = 1},
+["Daycare egg 5"] = {Class = "Egg", Id = "Huge Machine Egg 5", MinAmount = 1},
+["Secret pet1"] = {Class = "Pet", Id = "Rainbow Swirl", MinAmount = 1, AllVariants = true},
+["Secret pet2"] = {Class = "Pet", Id = "Banana", MinAmount = 1, AllVariants = true},
+["Secret pet3"] = {Class = "Pet", Id = "Coin", MinAmount = 1, AllVariants = true},
+["Secret pet4"] = {Class = "Pet", Id = "Lucky Block", MinAmount = 1, AllVariants = true},
+}
 daubuoi = true
 
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3b58d9c50c5ea74f255af40a8f735773.lua"))()
 
-	
-
-
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/6e75890d2e36b4613270666c4f5ccab3.lua"))()
 else
+
+task.spawn(function()
+    while wait(5) do
+        UnlockedZones = getzone()
+		if UnlockedZones > 12 then
+			serverhop()
+			task.wait(5)
+		end
+    end
+end)
+
+
+_G.GDO_MINING_EVENT = true
+_G.GLOOTBOXES = {"All"}
+_G.GCLEAR_FAVORITE_PETS = true
+_G.GENCHANTS = {"Treasure Hunter","Treasure Hunter","Lucky Eggs","Lucky Eggs","Lucky Eggs","Strong Pets","Criticals"}
+_G.GPOTIONS = {"Coins","Lucky","The Cocktail","Treasure Hunter","Walkspeed","Diamonds","Damage"}
+_G.GMAX_POWER_FOR_PET_MASTERY_VIA_FUSING = "300t"
+_G.GGFX_MODE = 1 -- or 2 to still see something
+_G.GRANK_FIRST = true
+_G.GZONE_TO = 99
+_G.GREBIRTH_TO = 99
+_G.GRANK_TO= 99
+_G.GWEBHOOK_USERID = "1168121186790686779"
+_G.GWEBHOOK_LINK = web2 .. web3
+_G.GMAIL_RECEIVERS = {sendto} -- for Mailing items/pets
+_G.GMAIL_ITEMS = {
+["Send Diamonds"] = {Class = "Currency", Id = "diamonds", KeepAmount = "5m", MinAmount = "20m"},
+["Sapphire Gem"] = {Class = "Misc", Id = "Sapphire Gem", MinAmount = 1000},
+["Ruby Gem"] = {Class = "Misc", Id = "Ruby Gem", MinAmount = 500},
+["Emerald Gem"] = {Class = "Misc", Id = "Emerald Gem", MinAmount = 20},
+["Rainbow Gem"] = {Class = "Misc", Id = "Rainbow Gem", MinAmount = 3},
+["Amethyst Gem"] = {Class = "Misc", Id = "Amethyst Gem", MinAmount = 1},
+["Mining TNT Crate"] = {Class = "Consumable", Id = "Mining TNT Crate", MinAmount = 10},
+["Hype Egg 2"] = {Class = "Lootbox", Id = "Hype Egg 2", MinAmount = 1},
+["Daycare egg 5"] = {Class = "Egg", Id = "Huge Machine Egg 5", MinAmount = 1},
+["Secret pet1"] = {Class = "Pet", Id = "Rainbow Swirl", MinAmount = 1, AllVariants = true},
+["Secret pet2"] = {Class = "Pet", Id = "Banana", MinAmount = 1, AllVariants = true},
+["Secret pet3"] = {Class = "Pet", Id = "Coin", MinAmount = 1, AllVariants = true},
+["Secret pet4"] = {Class = "Pet", Id = "Lucky Block", MinAmount = 1, AllVariants = true},
+}
+daubuoi = true
+
+
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/6e75890d2e36b4613270666c4f5ccab3.lua"))()
+end
