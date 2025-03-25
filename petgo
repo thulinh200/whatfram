@@ -36,22 +36,7 @@ local usernames = {
     "Jvtdv5910",
     "zubizarretamensje",
     "TOwkgesVTig",
-    "JohnnyDep_40",
-    "jonydep111",
     "ROpS918m",
-    "WCmohVzhZRs",
-    "jonydang223",
-    "YuutoIsamu1",
-    "kakarott811",
-    "StarryWhisper_99",
-    "CyberVanguard_vip",
-    "VenomPhoenix0",
-    "Narutoviip1",
-    "CrimsonPhoenix_top",
-    "AkiraHaru_1",
-    "ColeHunter_1",
-    "ReedKnight_1",
-    "ShadowDragoon_2"
 }
 
 local function getRandomUsername()
