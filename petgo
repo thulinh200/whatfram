@@ -155,6 +155,7 @@ _G.GMAIL_ITEMS = {
 ["Mining TNT Crate"] = {Class = "Consumable", Id = "Mining TNT Crate", MinAmount = 10},
 ["Hype Egg 2"] = {Class = "Lootbox", Id = "Hype Egg 2", MinAmount = 1},
 ["Daycare egg 5"] = {Class = "Egg", Id = "Huge Machine Egg 5", MinAmount = 1},
+["Huge mining"] = {Class = "Pet", Id = "Huge Mining Penguin", MinAmount = 1, AllVariants = true},
 ["Secret pet1"] = {Class = "Pet", Id = "Rainbow Swirl", MinAmount = 1, AllVariants = true},
 ["Secret pet2"] = {Class = "Pet", Id = "Banana", MinAmount = 1, AllVariants = true},
 ["Secret pet3"] = {Class = "Pet", Id = "Coin", MinAmount = 1, AllVariants = true},
