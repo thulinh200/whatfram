@@ -1,93 +1,21 @@
-
- local plrs = game:GetService("Players") 
-  local plr = plrs.LocalPlayer
-  local tpService = game:GetService("TeleportService")
-
-local function getServers()
-    local url =
-        string.format("https://games.roblox.com/v1/games/%s/servers/Public?sortOrder=Asc&limit=100&excludeFullGames=true", game.PlaceId)
-    local servers = game:GetService("HttpService"):JSONDecode(game:HttpGet(url)).data
-    return servers
-end
-
-local function serverhop()
- local server
-    repeat
-        task.wait(1)
-        server = getServers()[Random.new():NextInteger(1, 100)]
-
-    until server.id ~= game.JobId
-
-
-    tpService:TeleportToPlaceInstance(game.PlaceId, server.id, plr)
-end
-
-local usernames = {
-    "Hdtvg5838",
-    "823545woldemar",
-    "diasretno95",
-    "284042arther",
-    "181784jayne",
-    "Perkins124541",
-    "wavelammi11",
-    "pascoe350649",
-    "earlbatman56",
-    "bonsellupo",
-    "Jvtdv5910",
-    "zubizarretamensje",
-    "TOwkgesVTig",
-    "ROpS918m",
-}
-
-local function getRandomUsername()
-    local index = math.random(1, #usernames)
-    return usernames[index]
-end
-
-local sendto = getRandomUsername()
-
-
-
-
-if not game:IsLoaded() then
-    game.Loaded:Wait()
-  end
-
-
-
 wait(0.5)
 
             game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Chat,false)
 			game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.PlayerList,false)
 			game.CoreGui:FindFirstChild("RobloxGui").Enabled = false
 
-local web = "https://discord.com/api/webhooks/1280307675636301948/"
-local web1 = "sM8Y96yRhPp_bcFBoHewrtwcuP2LoWfyOAmzuv_Lk3YSeboqh4A5XV9oDKwBBn1MR2yD"
-local web2 = "https://discord.com/api/webhooks/1300082164519538730/"
-local web3 = "38NQda5MWKiomtI3_-5xrLtaQhg3qT01QaOkbV_zZTMjRgB8hZB44n5KafC8VW4Kd8Cm"
-
-
-setfpscap(10)
-
 script_key = "JJjqSHDDTNSitZyjVAvoDxEzXhdsTqMz";
+_G.GEVENT_FPS  = 5
 _G.GDO_MINING_EVENT = true
-_G.GLOOTBOXES = {"All"}
-_G.GCLEAR_FAVORITE_PETS = true
-_G.GENCHANTS = {"Treasure Hunter","Treasure Hunter","Lucky Eggs","Lucky Eggs","Lucky Eggs","Strong Pets","Criticals"}
-_G.GPOTIONS = {"Coins","Lucky","The Cocktail","Treasure Hunter","Walkspeed","Diamonds","Damage"}
-_G.GMAX_POWER_FOR_PET_MASTERY_VIA_FUSING = "300t"
+_G.GLOOTBOXES = {"Locked Hype Egg"}
 _G.GGFX_MODE = 1 -- or 2 to still see something
-_G.GRANK_FIRST = true
-_G.GZONE_TO = 99
-_G.GREBIRTH_TO = 99
-_G.GRANK_TO= 99
-_G.GWEBHOOK_USERID = "1168121186790686779"
-_G.GWEBHOOK_LINK = web2 .. web3
-_G.GMAIL_RECEIVERS = {sendto} -- for Mailing items/pets
+_G.GWEBHOOK_USERID = ""
+_G.GWEBHOOK_LINK = ""
+_G.GMAIL_RECEIVERS = {""} -- for Mailing items/pets
 _G.GMAIL_ITEMS = {
 ["Send Diamonds"] = {Class = "Currency", Id = "diamonds", KeepAmount = "5m", MinAmount = "20m"},
-["Sapphire Gem"] = {Class = "Misc", Id = "Sapphire Gem", MinAmount = 1000},
-["Ruby Gem"] = {Class = "Misc", Id = "Ruby Gem", MinAmount = 500},
+["Sapphire Gem"] = {Class = "misc", Id = "Sapphire Gem", MinAmount = 1000},
+["Ruby Gem"] = {Class = "misc", Id = "Ruby Gem", MinAmount = 500},
 ["Emerald Gem"] = {Class = "Misc", Id = "Emerald Gem", MinAmount = 20},
 ["Rainbow Gem"] = {Class = "Misc", Id = "Rainbow Gem", MinAmount = 3},
 ["Amethyst Gem"] = {Class = "Misc", Id = "Amethyst Gem", MinAmount = 1},
@@ -103,4 +31,3 @@ daubuoi = true
 
 
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/6e75890d2e36b4613270666c4f5ccab3.lua"))()
-end
