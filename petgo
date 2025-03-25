@@ -56,7 +56,7 @@ if not game:IsLoaded() then
 
 			task.spawn(function()
 			task.wait(3)
-			setfpscap(5)
+			setfpscap(30)
 			task.wait()
             		game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Chat,false)
 			task.wait()
@@ -71,8 +71,8 @@ local web2 = "https://discord.com/api/webhooks/1330886409707454477/"
 local web3 = "dEb04jYUEeX4ACVXdC8t7hh2VNyJWiaZ4lH0Jvt8wvPRzY-tRcq-9Czu2nz_7r3UYPF_"
 
 
+task.wait(5)
 
-script_key = "JJjqSHDDTNSitZyjVAvoDxEzXhdsTqMz";
 
 local save = require(game:GetService("ReplicatedStorage").Library.Client.Save)
 
@@ -92,32 +92,35 @@ UnlockedZones = getzone()
 task.wait()
 
 if UnlockedZones > 12 then
-
-_G.GDO_MINING_EVENT = true
-_G.GLOOTBOXES = {"All"}
-_G.GGFX_MODE = 1 -- or 2 to still see something
-_G.GWEBHOOK_USERID = "1168121186790686779"
-_G.GWEBHOOK_LINK = web2 .. web3
-_G.GMAIL_RECEIVERS = {sendto} -- for Mailing items/pets
-_G.GMAIL_ITEMS = {
-["Send Diamonds"] = {Class = "Currency", Id = "diamonds", KeepAmount = "5m", MinAmount = "20m"},
-["Sapphire Gem"] = {Class = "Misc", Id = "Sapphire Gem", MinAmount = 20000},
-["Ruby Gem"] = {Class = "Misc", Id = "Ruby Gem", MinAmount = 200000},
-["Emerald Gem"] = {Class = "Misc", Id = "Emerald Gem", MinAmount = 500},
-["Rainbow Gem"] = {Class = "Misc", Id = "Rainbow Gem", MinAmount = 8},
-["Amethyst Gem"] = {Class = "Misc", Id = "Amethyst Gem", MinAmount = 100},
-["Mining TNT Crate"] = {Class = "Consumable", Id = "Mining TNT Crate", MinAmount = 10},
-["Hype Egg 2"] = {Class = "Lootbox", Id = "Hype Egg 2", MinAmount = 1},
-["Daycare egg 5"] = {Class = "Egg", Id = "Huge Machine Egg 5", MinAmount = 1},
-["Secret pet1"] = {Class = "Pet", Id = "Rainbow Swirl", MinAmount = 1, AllVariants = true},
-["Secret pet2"] = {Class = "Pet", Id = "Banana", MinAmount = 1, AllVariants = true},
-["Secret pet3"] = {Class = "Pet", Id = "Coin", MinAmount = 1, AllVariants = true},
-["Secret pet4"] = {Class = "Pet", Id = "Lucky Block", MinAmount = 1, AllVariants = true},
+script_key="fPbfocuCghihxMSzVGuGMHBpWBcOfoHG";
+_G.ZapSettings = {
+  ["PetSimulator99 - AutoCompleteMiningGateQuestToggle"] = true,
+  ["PetSimulator99 - AutoClaimMailboxToggle"] = true,
+  ["PetSimulator99 - DisableEggAnimationToggle"] = true,
+  ["PetSimulator99 - AutoTeleportToBestMiningWorldToggle"] = true,
+  ["PetSimulator99 - AutoUseMiningSpeedBoosterToggle"] = true,
+  ["PetSimulator99 - WhiteScreenToggle"] = true,
+  ["PetSimulator99 - AutoUseMiningCoinsBoosterToggle"] = true,
+  ["PetSimulator99 - AutoUseMiningDamageBoosterToggle"] = true,
+  ["PetSimulator99 - DisableBreakablesModelsToggle"] = true,
+  ["PetSimulator99 - DisableEffectsRenderingToggle"] = true,
+  ["PetSimulator99 - DisableConfettiRenderingToggle"] = true,
+  ["PetSimulator99 - DeleteUnnecessaryPartsToggle"] = true,
+  ["PetSimulator99 - AutoMiningBlockToggle"] = true,
+  ["PetSimulator99 - AutoBuyNextMiningAreaToggle"] = true,
+  ["PetSimulator99 - AutoClaimDefaultForeverPackFreeGiftToggle"] = true,
+  ["PetSimulator99 - AutoBuyMiningMerchantToggle"] = true,
+  ["PetSimulator99 - AutoClaimPickaxeQuestRewardToggle"] = true,
+  ["PetSimulator99 - AutoCompletePickaxeQuestToggle"] = true,
+  ["PetSimulator99 - AutoClaimFreeGiftsToggle"] = true,
+  ["PetSimulator99 - AutoCompletePickaxeQuestEmeraldPickaxeToggle"] = true,
+  ["PetSimulator99 - AutoBuyEggToggle"] = true
 }
+
 daubuoi = true
 
 
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/6e75890d2e36b4613270666c4f5ccab3.lua"))()
+loadstring(game:HttpGet('https://zaphub.xyz/Exec'))()
 else
 
 task.spawn(function()
@@ -130,7 +133,7 @@ task.spawn(function()
     end
 end)
 
-
+script_key = "JJjqSHDDTNSitZyjVAvoDxEzXhdsTqMz";
 _G.GDO_MINING_EVENT = true
 _G.GLOOTBOXES = {"All"}
 _G.GCLEAR_FAVORITE_PETS = true
